@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Title</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
+  <style>
+    h1, h2 {
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .bold {
+      font-weight: 700; /* standard bold = 700 */
+    }                   /* standard normal = 400 */
+    .italic {
+      font-style: italic;
+    }
+    blockquote.large-type { /* selector for blockquote elements with class "large-type" */
+      font-size: larger; /* can also use specific sizes like 1.5em or 150% */
+    }
+    blockquote {
+      padding: 10px;
+      margin: top 50px; /* can also be bottom, left, right, bottom-left, etc. */
+      border: 5px dashed red; /* can also be solid, dotted, double, etc. */
+      font-family: Helvetica, sans-serif;
+      text-align: justify; /* meaning that the text will be aligned to both the left and right margins, creating a clean and organized appearance */
+      background-color: lightyellow;
+    }
+  </style>
+<body>
+<h1>css Practice</h1>
+<h2>Programming Quotes</h2>
+<blockquote>
+"The use of COBOL cripples the mind; its teaching should, therefore,
+be regarded as a <span class="bold">criminal offense</span>."<br>
+-- Edsgar Dijkstra
+</blockquote>
+
+<blockquote class="large-type">
+"C makes it easy to shoot yourself in the foot; C++ makes
+it harder, but when you do, it blows away your whole leg. "<br>
+-- Bjarne Stroustrup
+</blockquote>
+<blockquote>
+"Man is the best computer we can put aboard a spacecraft
+and the only one that can be <span class="italic">mass produced</span>
+with unskilled labor."<br>
+-- Wernher von Braun
+</blockquote>
+</body>
