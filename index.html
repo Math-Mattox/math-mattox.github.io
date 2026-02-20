@@ -1,29 +1,78 @@
 <!DOCTYPE html>
-<html lang="en"
-<head>
-  <meta chartset="UTF-8"
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CIS 119 Spring 2026 - Dean Dyer</title>
-  <link rel="stylesheet" href=styles.css">
-  <script src="scripts.js"></script>
-</head>
-<body>
-  <header>
-    <!--repeated top of page info-->
-    <h1>Main Page - CIS 119 Course</h1>
-    Mattox Ward
-  </header>
-  <nav>
-    <!--repeated navigation here, may also move to header-->
-    Nav area
-  </nav>
-  <main>
-    <!--main content goes here-->
-    Main content
-  </main>
-  <footer>
-    <!--repeated bottom of page content goes here-->
-    Footer area
-  </footer>
-</body>
-</html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CIS 119 Spring 2026 - Dean Dyer </title>
+    <script src="script.js"></script>
+    <style>
+      /* Background and Contrasting Font */
+      body {
+        background-color: #071936;
+        color: #ffffff;
+        font-family: 'Inter Tight', sans-serif;
+      }
+
+      body header {
+        text-align: center;
+        line-height: 0.6;
+      }
+
+      #CIS119 h1 {
+        font-weight: 400;
+      }
+
+      /* Div Sections for Labs and Homework */
+      .classwork {
+        background-color: #0a1e3c;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 0.8;
+        border: 3px dashed #59c2ff;
+        border-radius: 15px;
+      }
+      
+      /* Changing Header Colors Inside Div Sections */
+      .classwork h2 {
+        color: #59c2ff;
+      }
+
+      .classwork a {
+        color: #59c2ff;
+        font-weight: 700;
+      }
+      .classwork a:hover {
+        color: #f1c40f;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <!--repeated top of page info-->
+      <h1> Mattox Ward </h1>
+      <div class="header" id="CIS119">
+        <h1> CIS 119 - Spring 2026 </h1>
+      </div>
+    </header>
+    
+    <div class="classwork" id="Labs">
+      <h2> Labs </h2>
+      <p> <i> This is where lab assignments will be listed. </i> </p>
+      <p>
+        Chapter 2 - <a href="https://math-mattox.github.io/pgmExplanation.html">pgmExplanation</a>
+      </p>
+      <p>
+        Chapter 3 - <a href="https://math-mattox.github.io/ProgrammingQuotes.html">Programming Quotes</a>
+      </p>
+    </div>
+    <!--this section will show lab assignments in a box or list format-->
+    <div class="classwork" id="Homework">
+      <h2> Homework </h2>
+      <p> <i> This is where homework assignments will be listed. </i> </p>
+    </div>
+  </body>
+  </html>
