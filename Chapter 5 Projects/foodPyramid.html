@@ -4,7 +4,35 @@
     <meta charset="UTF-8">
     <title>Food Pyramid</title>
     <style>
-
+       table {
+        border: 1px black solid;
+        border-collapse: collapse;
+       }
+       caption {
+        font-size: 30px;
+        padding: 5px;
+       }
+       td {
+        padding: 10px;
+        text-align: center;
+        border: 1px black solid;
+       }
+       th {
+        padding: 10px;
+        background-color: #238c55;
+        color: white;
+        border: 1px black solid;
+        border-collapse: collapse;
+       }
+       .food-group {
+        text-align: left;
+       }
+       .group {
+        font-weight: bold;
+       }
+       .description {
+        font-style: italic;
+       }
     </style>
   </head>
   <body>
@@ -23,27 +51,27 @@
       </thead>
       <tbody>
         <tr>
-          <td>Dairy<span class="description">(milk, yogurt, cheese)</span></td>
+          <td class="food-group"><span class="group">Dairy</span><br><span class="description">(milk, yogurt, cheese)</span></td>
           <td>2-3</td>
           <td>3-4</td>
         </tr>
         <tr>
-          <td>Meat and Beans<span class="description">(beef, poultry, fish, beans)</span></td>
+          <td class="food-group"><span class="group">Meat and Beans</span><br><span class="description">(beef, poultry, fish, beans)</span></td>
           <td>2-3</td>
           <td>5-6</td>
         </tr>
         <tr>
-          <td>Fruits</td>
+          <td class="food-group"><span class="group">Fruits</span></td>
           <td>2-4</td>
           <td>2-4</td>
         </tr>
         <tr>
-          <td>Vegetables</td>
+          <td class="food-group"><span class="group">Vegetables</span></td>
           <td>3-5</td>
           <td>1-2</td>
         </tr>
         <tr>
-          <td>Grains<span class="description">(breads, donuts, pop tarts)</span></td>
+          <td class="food-group"><span class="group">Grains</span><br><span class="description">(breads, donuts, pop tarts)</span></td>
           <td>1-2</td>
           <td>3-5</td>
         </tr>
