@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice Form</title>
+  <style>
+    header {
+      text-align: center;
+      color: #7d287d;
+      padding-top: 5px;
+      line-height: 0.2;
+    }
+    .container {
+      display: grid;
+      border: 1px solid #3b53a1;
+      grid-template-columns: 49% 17% 17% 17%;
+      grid-auto-rows: 35px;
+    }
+    .grid-space {
+      border: 1px solid #3b53a1;
+      padding: 8px;
+    }
+    .title {
+      font-weight: bold;
+    }
+    .width-4 {
+      grid-column: 1 / 5;
+    }
+    .width-3 {
+      grid-column: 1 / 4;
+    }
+    .black-divider {
+      background-color: black;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Customer Order Form</h1>
+  </header>
+  <div class="container">
+    <div class="grid-space width-4">Order Number</div>
+    <div class="grid-space width-4">Order Date</div>
+    <div class="grid-space title">Product Name</div> <div class="grid-space title">Color</div> <div class="grid-space title">Quantity</div> <div class="grid-space title">Price</div>
+    <div class="grid-space"></div> <div class="grid-space"></div> <div class="grid-space"></div> <div class="grid-space"></div>
+    <div class="grid-space"></div> <div class="grid-space"></div> <div class="grid-space"></div> <div class="grid-space"></div>
+    <div class="grid-space"></div> <div class="grid-space"></div> <div class="grid-space"></div> <div class="grid-space"></div>
+    <div class="grid-space"></div> <div class="grid-space"></div> <div class="grid-space"></div> <div class="grid-space"></div>
+    <div class="grid-space width-4 black-divider"></div>
+    <div class="grid-space width-4">Subtotal</div>
+    <div class="grid-space width-4">Tax</div>
+    <div class="grid-space width-3">Shipping</div> <div class="grid-space">5.95</div>
+    <div class="grid-space width-4">Total</div>
+  </div>
+</body>
+</html>
