@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>March Madness</title>
+  <style>
+  .large-grid {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    border: 1px solid black;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+  }
+  .section {
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+  .name {
+    font-weight: bold;
+  }
+  .calendar div:nth-child(n+24) {
+      background-color: gold;
+  }
+  .calendar div:nth-child(n+40) {
+      background-color: transparent;
+  }
+  </style>
+</head>
+<body>
+  <div class="large-grid">
+    <div class="section">
+      <h1>MARCH MADNESS</h1>
+    </div>
+
+    <div class="section">
+      <h3>March</h3>
+      <div class="calendar">
+        <div class="days name">Sun</div>
+        <div class="days name">Mon</div>
+        <div class="days name">Tue</div>
+        <div class="days name">Wed</div>
+        <div class="days name">Thu</div>
+        <div class="days name">Fri</div>
+        <div class="days name">Sat</div>
+        <div class="days"></div> <div class="days">1</div> <div class="days">2</div> <div class="days">3</div> <div class="days">4</div> <div class="days">5</div> <div class="days">6</div>
+        <div class="days">7</div> <div class="days">8</div> <div class="days">9</div> <div class="days">10</div> <div class="days">11</div> <div class="days">12</div> <div class="days">13</div>
+        <div class="days">14</div> <div class="days">15</div> <div class="days">16</div> <div class="days">17</div> <div class="days">18</div> <div class="days">19</div> <div class="days">20</div>
+        <div class="days">21</div> <div class="days">22</div> <div class="days">23</div> <div class="days">24</div> <div class="days">25</div> <div class="days">26</div> <div class="days">27</div>
+        <div class="days">28</div> <div class="days">29</div> <div class="days">30</div> <div class="days">31</div> <div class="days"></div> <div class="days"></div> <div class="days"></div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h3>The Fighting Irish</h3>
+      <p>Rally sons of Notre Dame:<br>
+      Sing her glory and sound her fame,<br>
+      Raise her Gold and Blue<br>
+      And cheer with voices true!</p>
+    </div>
+  </div>
+</body>
+</html>
