@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CIS 116 Exam Cheat Sheet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f0ece3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .page {
+    width: 10.5in;
+    min-height: 8in;
+    background: #fffdf8;
+    border: 2px solid #1a1a1a;
+    padding: 0.28in 0.3in;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 0 8px;
+    position: relative;
+  }
+
+  /* ---- HEADER ---- */
+  .header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 3px solid #1a1a1a;
+    padding-bottom: 4px;
+    margin-bottom: 7px;
+  }
+  .header h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #1a1a1a;
+  }
+  .header span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    color: #555;
+    font-weight: 400;
+  }
+
+  /* ---- SECTION ---- */
+  .section {
+    margin-bottom: 6px;
+  }
+  .section h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6.8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background: #1a1a1a;
+    color: #fffdf8;
+    padding: 1.5px 4px;
+    margin-bottom: 3px;
+  }
+
+  /* ---- TEXT ---- */
+  p, li {
+    font-size: 6.5pt;
+    line-height: 1.45;
+    color: #222;
+  }
+  ul { padding-left: 9px; }
+  li { margin-bottom: 1px; }
+  strong { font-weight: 700; color: #1a1a1a; }
+  em { font-style: normal; color: #b84a00; font-weight: 600; }
+
+  /* ---- CODE ---- */
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6pt;
+    background: #f0ece3;
+    padding: 0 2px;
+    border-radius: 2px;
+    color: #1a1a1a;
+  }
+  pre {
+    display: block;
+    padding: 3px 5px;
+    margin: 2px 0;
+    border-left: 2px solid #b84a00;
+    white-space: pre;
+    line-height: 1.55;
+  }
+  .comment { color: #777; }
+
+  /* ---- TABLE ---- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2px 0;
+    font-size: 6pt;
+  }
+  th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 5.8pt;
+    background: #e8e3d9;
+    text-align: left;
+    padding: 1.5px 3px;
+    border: 1px solid #ccc;
+  }
+  td {
+    padding: 1.5px 3px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    line-height: 1.4;
+  }
+  tr:nth-child(even) td { background: #faf8f3; }
+
+  /* ---- DIVIDER ---- */
+  .col-divider {
+    border-left: 1px dashed #ccc;
+    padding-left: 8px;
+  }
+
+  .span2 { grid-column: span 2; }
+  .span1 { grid-column: span 1; }
+
+  .note {
+    font-size: 5.8pt;
+    color: #888;
+    font-style: italic;
+    margin-top: 1px;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { border: none; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>CIS 116 — C++ Exam Reference Sheet</h1>
+    <span>Mattox Ward &nbsp;|&nbsp; Intro Programming &nbsp;|&nbsp; Exam 2</span>
+  </div>
+
+  <!-- COL 1: DATA TYPES + VARIABLES -->
+  <div class="span1 section">
+    <h2>Data Types</h2>
+    <table>
+      <tr><th>Type</th><th>Size</th><th>Notes</th></tr>
+      <tr><td><code>char</code></td><td>1B</td><td>one character, use <code>'A'</code></td></tr>
+      <tr><td><code>int</code></td><td>4B</td><td>whole numbers</td></tr>
+      <tr><td><code>double</code></td><td>8B</td><td>preferred decimal type</td></tr>
+      <tr><td><code>float</code></td><td>4B</td><td>decimal, less precise than double</td></tr>
+    </table>
+    <p class="note">Mixing types: result takes the "larger" type. Storing big→small loses data!</p>
+  </div>
+
+  <div class="span1 section" style="margin-top:0">
+    <h2>Identifiers &amp; Constants</h2>
+    <ul>
+      <li>Start with a <strong>letter</strong>, letters + digits only (underscore ok)</li>
+      <li>Case-sensitive: <code>name ≠ Name</code></li>
+      <li>No reserved words. Must be <strong>descriptive</strong>.</li>
+      <li>camelCase vars: <code>firstName</code></li>
+      <li>UPPER_CASE consts: <code>NUM_PEOPLE</code></li>
+      <li>PascalCase funcs: <code>GetData</code></li>
+    </ul>
+    <pre><span class="comment">// Named constant — declared GLOBALLY (above main)</span>
+const int STRING_WIDTH = 80;
+const double TAX_RATE = 0.0875;</pre>
+    <p class="note"><strong>const</strong> must be declared globally, above main. Never use variables globally.</p>
+  </div>
+
+  <!-- COL 3: OPERATORS -->
+  <div class="span1 section col-divider">
+    <h2>Arithmetic &amp; Operators</h2>
+    <p><strong>Order (PEMD%AS):</strong> unary <code>-</code> → <code>* / %</code> → <code>+ -</code> (left to right)</p>
+    <pre>27 / 4  = 6     <span class="comment">// integer division, truncates</span>
+27 % 4  = 3     <span class="comment">// modulus = remainder</span>
+11 / 3  = 3     <span class="comment">// NOT 3.67!</span>
+11 % 3  = 2</pre>
+
+    <p><strong>Rounding trick</strong> (add 0.5 before casting):</p>
+    <pre>changeInCents = (int)(amount * 100 + 0.5);</pre>
+
+    <p><strong>Ceiling division</strong> (round UP without floats):</p>
+    <pre>trucks = (qty + cap - 1) / cap;</pre>
+
+    <h2 style="margin-top:5px">Relational &amp; Logical</h2>
+    <table>
+      <tr><th>Op</th><th>Meaning</th><th>Example</th></tr>
+      <tr><td><code>==</code></td><td>equal</td><td><code>a == 5</code></td></tr>
+      <tr><td><code>!=</code></td><td>not equal</td><td><code>a != 0</code></td></tr>
+      <tr><td><code>&amp;&amp;</code></td><td>AND</td><td><code>a&gt;0 &amp;&amp; a&lt;10</code></td></tr>
+      <tr><td><code>||</code></td><td>OR</td><td><code>c=='Y'||c=='y'</code></td></tr>
+      <tr><td><code>!</code></td><td>NOT</td><td><code>!done</code></td></tr>
+    </table>
+    <p style="margin-top:2px"><strong>De Morgan's Law:</strong><br>
+    <code>!(A || B)</code> → <code>!A &amp;&amp; !B</code><br>
+    <code>!(A &amp;&amp; B)</code> → <code>!A || !B</code></p>
+  </div>
+
+  <!-- COL 4: DECISIONS -->
+  <div class="span1 section col-divider">
+    <h2>Decision Structures</h2>
+    <pre><span class="comment">// if / else if / else</span>
+if (age &lt;= 12) {
+    cout &lt;&lt; "child" &lt;&lt; endl;
+} else if (age &lt;= 19) {
+    cout &lt;&lt; "teen" &lt;&lt; endl;
+} else {
+    cout &lt;&lt; "adult" &lt;&lt; endl;
+}</pre>
+    <pre><span class="comment">// Boolean constant as flag</span>
+const bool DEBUG_MODE = false;
+if (DEBUG_MODE)
+    cout &lt;&lt; "test: " &lt;&lt; val &lt;&lt; endl;</pre>
+    <ul>
+      <li>Braces optional for <strong>single-statement</strong> body</li>
+      <li><strong>Mutually exclusive</strong>: use if/else, not two ifs</li>
+      <li>Can't use <code>==</code> on strings — use <code>strcmp()</code></li>
+    </ul>
+  </div>
+
+  <!-- ROW 2 -->
+
+  <!-- COL 1: INPUT/OUTPUT -->
+  <div class="span1 section">
+    <h2>Input / Output</h2>
+    <pre>#include &lt;iostream&gt;
+using namespace std;</pre>
+    <pre><span class="comment">// Output</span>
+cout &lt;&lt; "Value: " &lt;&lt; x &lt;&lt; endl;
+
+<span class="comment">// Input — leaves newline behind!</span>
+cin &gt;&gt; x;
+cin.ignore(1000, '\n'); <span class="comment">// flush it</span>
+
+<span class="comment">// Read whole line (with spaces)</span>
+cin.getline(name, 80);
+
+<span class="comment">// RULE: always ignore() after &gt;&gt;</span>
+<span class="comment">//       before a getline!</span>
+cin &gt;&gt; num;
+cin.ignore(1000, '\n');
+cin.getline(name, 80); <span class="comment">// safe now</span></pre>
+
+    <h2 style="margin-top:5px">Escape Sequences</h2>
+    <table>
+      <tr><td><code>\n</code></td><td>newline</td><td><code>\t</code></td><td>tab</td></tr>
+      <tr><td><code>\"</code></td><td>quote</td><td><code>\\</code></td><td>backslash</td></tr>
+      <tr><td><code>\0</code></td><td>null (char 0)</td><td><code>\r</code></td><td>carriage ret</td></tr>
+    </table>
+    <p class="note"><code>'\0'</code> ≠ <code>'0'</code>. Null = char 0; <code>'0'</code> = char 48.</p>
+  </div>
+
+  <!-- COL 2: FORMATTED OUTPUT -->
+  <div class="span1 section">
+    <h2>Formatted Output <code style="font-size:5.5pt">#include &lt;iomanip&gt;</code></h2>
+    <table>
+      <tr><th>Manipulator</th><th>Effect</th><th>Sticky?</th></tr>
+      <tr><td><code>fixed</code></td><td>decimal notation</td><td>✓</td></tr>
+      <tr><td><code>setprecision(n)</code></td><td>n decimal places</td><td>✓</td></tr>
+      <tr><td><code>setw(n)</code></td><td>field width</td><td>✗ next only</td></tr>
+      <tr><td><code>left</code></td><td>left-align</td><td>✓</td></tr>
+      <tr><td><code>right</code></td><td>right-align</td><td>✓</td></tr>
+      <tr><td><code>showpoint</code></td><td>force decimal pt</td><td>✓</td></tr>
+    </table>
+    <pre>cout &lt;&lt; fixed &lt;&lt; setprecision(2);
+cout &lt;&lt; left  &lt;&lt; setw(20) &lt;&lt; "Name:"
+     &lt;&lt; right &lt;&lt; setw(10) &lt;&lt; value &lt;&lt; endl;</pre>
+    <p class="note"><code>setw()</code> is NOT sticky — reapply every time you need it.</p>
+    <p class="note"><code>showpoint</code> forces e.g. <code>5.00</code> instead of just <code>5</code></p>
+  </div>
+
+  <!-- COL 3: CHAR ARRAYS + FOR LOOP -->
+  <div class="span1 section col-divider">
+    <h2>Char Arrays (Strings)</h2>
+    <pre>char name[80]; <span class="comment">// holds up to 79 chars + '\0'</span>
+<span class="comment">// null-terminated: good data ends with '\0'</span>
+<span class="comment">// '\0' is char 0 — NOT the same as '0' (char 48)!</span></pre>
+    <pre><span class="comment">// Read whole line (spaces included)</span>
+cin.getline(name, 80);
+fileVar.getline(name, 80);
+
+<span class="comment">// Read one word (stops at space)</span>
+cin &gt;&gt; name;
+fileVar &gt;&gt; name;</pre>
+    <pre><span class="comment">// Iterating through a char array</span>
+for (int i = 0; i &lt; 80 &amp;&amp; name[i] != '\0'; i++)
+    cout &lt;&lt; name[i];</pre>
+
+    <h2 style="margin-top:5px">For Loop</h2>
+    <pre><span class="comment">// Basic counted loop</span>
+for (int i = 0; i &lt; n; i++) {
+    <span class="comment">// body</span>
+}
+
+<span class="comment">// Loop over file records</span>
+salesFile &gt;&gt; numSales;
+for (int i = 0; i &lt; numSales; i++) {
+    salesFile &gt;&gt; serial &gt;&gt; price &gt;&gt; code;
+    total = total + price;
+}</pre>
+  </div>
+
+  <!-- COL 4: FILE I/O -->
+  <div class="span1 section col-divider">
+    <h2>File I/O <code style="font-size:5.5pt">#include &lt;fstream&gt;</code></h2>
+    <pre><span class="comment">// INPUT FILE</span>
+ifstream myFile;
+myFile.open("data.txt");
+myFile &gt;&gt; num;
+myFile.ignore(1000, '\n');
+myFile.getline(name, 80);
+myFile.close();
+
+<span class="comment">// OUTPUT FILE</span>
+ofstream outFile;
+outFile.open("results.txt");
+outFile &lt;&lt; fixed &lt;&lt; setprecision(2);
+outFile &lt;&lt; left &lt;&lt; setw(15) &lt;&lt; label
+        &lt;&lt; right &lt;&lt; setw(10) &lt;&lt; val &lt;&lt; endl;
+outFile.close();</pre>
+    <p class="note">Use <code>outFile &lt;&lt;</code> exactly like <code>cout &lt;&lt;</code> — all the same formatting works!</p>
+    <p class="note">Always <code>.close()</code> both files when done.</p>
+  </div>
+
+  <!-- ROW 3: FUNCTIONS (full width) -->
+  <div class="span2 section" style="margin-top:0">
+    <h2>Functions</h2>
+    <pre><span class="comment">// 1. PROTOTYPE (declaration) — above main, describes the function</span>
+void ShowLine(char [80], double);       <span class="comment">// void = returns nothing</span>
+void GetData(double &amp;);                 <span class="comment">// & = pass by reference</span>
+int  ComputeAvg(int, int, int, int, int, int, int);  <span class="comment">// returns int</span>
+
+<span class="comment">// 2. CALL — inside main</span>
+GetData(amountToAdd);                   <span class="comment">// reference: changes the original</span>
+ShowLine(name, grade);                  <span class="comment">// value: uses a copy</span>
+avg = ComputeAvg(t1,t2,t3,t4,t5,t6,t7);
+cout &lt;&lt; ComputeAvg(t1,t2,t3,t4,t5,t6,t7) - 5 &lt;&lt; endl; <span class="comment">// return value in expression</span>
+
+<span class="comment">// 3. DEFINITION — after main</span>
+void GetData(double &amp; amountToAdd) {    <span class="comment">// & modifies the ORIGINAL variable</span>
+    cout &lt;&lt; "Enter amount: ";
+    cin &gt;&gt; amountToAdd;
+    cin.ignore(1000, '\n');
+}
+int ComputeAvg(int t1, int t2, int t3, int t4, int t5, int t6, int t7) {
+    int average;
+    average = (t1+t2+t3+t4+t5+t6+t7) / 7;
+    return average;             <span class="comment">// sends value BACK to caller</span>
+}</pre>
+    <ul>
+      <li><strong>Pass by value</strong> <code>(double x)</code> — makes a copy, original unchanged</li>
+      <li><strong>Pass by reference</strong> <code>(double &amp; x)</code> — shares memory, original IS changed</li>
+      <li><code>ifstream</code> / <code>ofstream</code> <strong>must always</strong> be by reference: <code>(ifstream &amp; f)</code></li>
+      <li>Local variables (under the heading) only visible inside that function</li>
+      <li>ALL variables must be defined in the function — under the heading OR passed in as parameters</li>
+    </ul>
+  </div>
+
+  <div class="span2 section col-divider" style="margin-top:0">
+    <h2>Program Layout — Apply to Any Question</h2>
+    <pre><span class="comment">// ── STEP 1: INCLUDES (only what you need) ─────────────────────</span>
+#include &lt;iostream&gt;   <span class="comment">// cin, cout, endl</span>
+#include &lt;fstream&gt;    <span class="comment">// ifstream, ofstream</span>
+#include &lt;iomanip&gt;    <span class="comment">// setw, setprecision, fixed, left, right, showpoint</span>
+using namespace std;
+
+<span class="comment">// ── STEP 2: HEADER COMMENT ────────────────────────────────────</span>
+<span class="comment">// Programmer:        Mattox Ward</span>
+<span class="comment">// Date Due:          Friday, April 25, 2026</span>
+<span class="comment">// Project Number:    9</span>
+<span class="comment">// Project Name:      Laboratory09</span>
+<span class="comment">// Project Description: One or two sentences describing</span>
+<span class="comment">//                      what the program does.</span>
+
+<span class="comment">// ── STEP 3: GLOBAL CONSTANTS (never variables here!) ──────────</span>
+const int STRING_WIDTH = 80;
+const double TAX_RATE = 0.0875;
+
+<span class="comment">// ── STEP 4: FUNCTION PROTOTYPES (if using functions) ──────────</span>
+void GetFileName(char [80]);
+void GetData(ifstream &amp;, char [80], char [80], double &amp;, int &amp;);
+void DisplayResults(char [80], double, int);
+
+<span class="comment">// ── STEP 5: MAIN FUNCTION ─────────────────────────────────────</span>
+int main(void) {
+
+    <span class="comment">// 5a. Define ALL local variables at the top</span>
+    char fileName[80], custName[80];
+    double price, total;
+    int quantity;
+    ifstream dataFile;
+
+    <span class="comment">// 5b. Get input (ask user for filename, read rest from file)</span>
+    GetFileName(fileName);
+    GetData(dataFile, fileName, custName, price, quantity);
+
+    <span class="comment">// 5c. Calculate</span>
+    total = price * quantity * (1.0 + TAX_RATE);
+
+    <span class="comment">// 5d. Display output</span>
+    DisplayResults(custName, total, quantity);
+
+    return 0;   <span class="comment">// always last line of main</span>
+}
+
+<span class="comment">// ── STEP 6: FUNCTION DEFINITIONS (after main) ─────────────────</span>
+void GetFileName(char fileName[80]) {
+    cout &lt;&lt; "Enter file name: ";
+    cin &gt;&gt; fileName;
+    cin.ignore(1000, '\n');
+}
+void GetData(ifstream &amp; dataFile, char fileName[80],
+        char custName[80], double &amp; price, int &amp; quantity) {
+    dataFile.open(fileName);
+    dataFile.getline(custName, 80);
+    dataFile &gt;&gt; price &gt;&gt; quantity;
+    dataFile.close();
+}
+void DisplayResults(char custName[80], double total, int quantity) {
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2);
+    cout &lt;&lt; left &lt;&lt; setw(20) &lt;&lt; custName
+         &lt;&lt; right &lt;&lt; setw(10) &lt;&lt; total &lt;&lt; endl;
+}</pre>
+
+    <h2 style="margin-top:5px">Common Gotchas</h2>
+    <table>
+      <tr><th>Problem</th><th>Fix</th></tr>
+      <tr><td>getline reads blank after <code>&gt;&gt;</code></td><td>Add <code>cin.ignore(1000,'\n');</code> before getline</td></tr>
+      <tr><td>Integer division gives 0</td><td>Use <code>1.0</code> or cast: <code>(double)a / b</code></td></tr>
+      <tr><td>Decimal imprecision</td><td>Add 0.5 before casting to int to round</td></tr>
+      <tr><td><code>setw()</code> not working</td><td>NOT sticky — reapply before every value</td></tr>
+      <tr><td>Function not changing variable</td><td>Parameter needs <code>&amp;</code> (pass by reference)</td></tr>
+    </table>
+  </div>
+
+</div>
+</body>
+</html>
