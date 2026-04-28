@@ -6,14 +6,13 @@ body {
     margin: 0;
 }
 
-/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background: #000;
-    border-bottom: 2px solid #fbff00; /* Nav Outline */
+    background: #000000;
+    border-bottom: 2px solid #fbff00;
 }
 
 .logo-container {
@@ -22,14 +21,10 @@ body {
     gap: 10px;
 }
 
-.logo-placeholder {
-    border: 1px solid white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 13px;
-    padding-right: 13px;
-    font-size: 10px;
-    text-align: center;
+.logo-image {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
 }
 
 .brand-name {
@@ -37,20 +32,32 @@ body {
     font-size: 1.2rem;
 }
 
-.nav-links a {
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a,
+.dropdown-main {
     color: white;
-    border: 1px solid white;
+    border: 1px solid #444444;
     text-decoration: none;
     margin-left: 20px;
     padding: 5px 10px;
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.dropdown-main:hover {
     background-color: #1e88e5;
-    transition: 0.2s ease;
-    transform: scale(1.05);
     border-color: #ffffff;
     color: #ffffff;
+    transform: scale(1.05);
 }
 
 .nav-links a.active {
@@ -58,29 +65,22 @@ body {
     background-color: #444444;
 }
 
+/* Dropdown wrapper */
 .dropdown {
     position: relative;
     display: inline-block;
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
-/* --- Dropdown Button Styling --- */
-.dropdown-button {
-    background-color: transparent;
-    color: white;
-    padding: 8px 16px;
-    font-size: 16px;
-    border: 2px solid #444; /* Matches your other nav buttons */
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.dropdown-main {
+    margin-left: 0; /* margin already on .dropdown */
 }
 
-/* --- Dropdown Content (Hidden by Default) --- */
+/* Dropdown content */
 .dropdown-content {
-    display: none; /* Hides the menu until hover */
+    display: none;
     position: absolute;
-    background-color: #1a1a1a; /* Dark background for the menu */
+    background-color: #1a1a1a;
     min-width: 180px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
     z-index: 10;
@@ -88,30 +88,30 @@ body {
     margin-top: 5px;
 }
 
-/* --- Links inside the Dropdown --- */
 .dropdown-content a {
     color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    border: none; /* Removes the button border for list items */
-    margin-left: 0;
+    border: none;
     border-bottom: 1px solid #333;
+    margin-left: 0;
+    transform: none;
 }
 
-/* --- Hover Effects --- */
 .dropdown:hover .dropdown-content {
-    display: block; /* Shows the menu when hovering the container */
+    display: block;
 }
 
-.dropdown:hover .dropdown-button {
-    background-color: #1e88e5; /* Brand Blue hover color */
+.dropdown:hover .dropdown-main {
+    background-color: #1e88e5;
     border-color: #ffffff;
 }
 
 .dropdown-content a:hover {
-    background-color: #333; /* Darker gray for specific item hover */
-    color: #fbff00; /* Yellow text for highlights */
+    background-color: #333;
+    color: #fbff00;
+    transform: none;
 }
 
 .hero {
@@ -121,15 +121,14 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border: 3px solid #00f7ff; /* Hero Outline */
 }
 
 .hero-video-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), #1a1a1a; 
-    filter: blur(8px); /* Blurred footage effect */
-    z-index: -1;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), #1a1a1a;
+    filter: blur(8px);
+    z-index: 0;
 }
 
 .hero-content {
@@ -137,38 +136,132 @@ body {
     gap: 40px;
     max-width: 900px;
     padding: 20px;
-    border: 2px dashed #ff00ff; /* Hero Content Outline */
+    position: relative;
+    z-index: 1;
+    align-items: center;
 }
 
-.hero-image-box {
+.hero-text {
+    flex: 1;
+}
+
+.bio {
+    font-size: 0.75em;
+    line-height: 1.6;
+    color: #dddddd;
+}
+
+.bio a {
+    color: #1e88e5;
+    text-decoration: underline;
+}
+
+.bio a:hover {
+    color: #fbff00;
+}
+
+.hero-image {
     width: 200px;
     height: 200px;
-    background: #333;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #fff;
-    float: right;
+    background: #333;
 }
 
-/* Resume Box */
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .resume {
     padding: 50px 5%;
-    border: 2px solid #999999; /* Main Section Outline */
 }
 
 .resume-box {
     background: #151515;
-    padding: 30px;
+    padding: 30px 40px;
     border-radius: 4px;
     border: 1px solid #444444;
 }
 
-/* Mobile Responsiveness */
+.resume-section {
+    margin-bottom: 40px;
+}
+
+.resume-section-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 1em;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    margin: 0 0 24px 0;
+}
+
+.resume-section-title::after {
+    content: '';
+    flex: 1;
+    border-top: 2px dashed #555;
+    display: block;
+}
+
+.resume-item {
+    margin-bottom: 28px;
+}
+
+.resume-item-name,
+.resume-education-name,
+.resume-role {
+    font-size: 0.85em;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    margin: 0 0 2px 0;
+    border-bottom: 1px solid #555;
+    padding-bottom: 4px;
+}
+
+.resume-location-date {
+    font-size: 0.75em;
+    color: #aaaaaa;
+    margin: 4px 0 4px 0;
+}
+
+.resume-description {
+    font-size: 0.8em;
+    color: #dddddd;
+    margin: 2px 0 4px 0;
+}
+
+.resume-skills {
+    font-size: 0.72em;
+    color: #aaaaaa;
+    margin: 0;
+}
+
+.resume-link {
+    color: #1e88e5;
+    text-decoration: underline;
+}
+
+.resume-link:hover {
+    color: #fbff00;
+}
+
+/* ── Mobile ── */
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column;
         text-align: center;
     }
-    .hero-image-box { margin: 0 auto; }
+    .hero-image { margin: 0 auto; }
 }
