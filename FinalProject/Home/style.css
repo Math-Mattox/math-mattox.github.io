@@ -164,8 +164,8 @@ body {
 }
 
 .hero-image {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     flex-shrink: 0;
     overflow: hidden;
     border: 1px solid #ffffff;
@@ -175,13 +175,7 @@ body {
     align-items: center;
     justify-content: center;
     background: #333333;
-}
-
-.profile-picture {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 /* Resume */
