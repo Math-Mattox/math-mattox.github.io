@@ -180,6 +180,7 @@ body {
     border-radius: 4px;
     transition: 0.3s ease;
     margin-top: 10px;
+    font-family: inherit;
 }
 
 .contact-btn:hover {
