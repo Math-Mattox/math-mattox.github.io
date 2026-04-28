@@ -6,7 +6,7 @@ body {
     margin: 0;
 }
 
-/* ── Navbar ── */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -33,7 +33,6 @@ body {
     font-size: 32px;
 }
 
-/* Nav links — all share the same base style */
 .nav-links {
     display: flex;
     align-items: center;
@@ -67,17 +66,16 @@ body {
     background-color: #444444;
 }
 
-/* Dropdown wrapper */
+/* Dropdown */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
 .dropdown-main {
-    margin-left: 0; /* margin already on .dropdown */
+    margin-left: 0;
 }
 
-/* Dropdown content */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -117,7 +115,7 @@ body {
     transform: none;
 }
 
-/* ── Hero ── */
+/* Hero */
 .hero {
     position: relative;
     min-height: 400px;
@@ -183,7 +181,7 @@ body {
     display: block;
 }
 
-/* ── Resume ── */
+/* Resume */
 .resume {
     padding: 50px 5%;
     display: flex;
@@ -191,7 +189,6 @@ body {
     gap: 24px;
 }
 
-/* Each section (EDUCATION, EXPERIENCE) is now its own box */
 .resume-box {
     background: #151515;
     padding: 30px 40px;
@@ -223,14 +220,12 @@ body {
     margin-bottom: 20px;
 }
 
-/* Divider between subsections inside a box */
 .resume-box hr {
     border: none;
     border-top: 1px solid #2a2a2a;
     margin: 20px 0;
 }
 
-/* Job/school title — largest text in the entry */
 .resume-item-name,
 .resume-education-name,
 .resume-role {
@@ -241,21 +236,18 @@ body {
     margin: 0 0 4px 0;
 }
 
-/* Date/location — noticeably smaller than the title */
 .resume-location-date {
     font-size: 0.65em;
     color: #aaaaaa;
     margin: 2px 0 4px 0;
 }
 
-/* Description — slightly smaller than title */
 .resume-description {
     font-size: 0.7em;
     color: #dddddd;
     margin: 2px 0 4px 0;
 }
 
-/* Skills — smallest, most muted */
 .resume-skills {
     font-size: 0.62em;
     color: #888888;
@@ -271,7 +263,7 @@ body {
     color: #fbff00;
 }
 
-/* ── Mobile ── */
+/* Mobile Formatting */
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column;
