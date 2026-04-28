@@ -166,18 +166,19 @@ body {
 .hero-image {
     width: 300px;
     height: 300px;
-    flex-shrink: 0;
     overflow: hidden;
     border: 1px solid #ffffff;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.70);
     border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #333333;
-    object-fit: cover;
 }
 
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+    
 /* Resume */
 .resume {
     padding: 50px 5%;
