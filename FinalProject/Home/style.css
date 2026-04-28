@@ -203,9 +203,9 @@ body {
     display: flex;
     align-items: center;
     gap: 16px;
-    font-size: 1.25em;
+    font-size: 1.5em;
     font-weight: 800;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.05em;
     color: #ffffff;
     text-decoration: underline;
     text-underline-offset: 4px;
