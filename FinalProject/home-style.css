@@ -155,12 +155,12 @@ body {
 }
 
 .bio a {
-    color: #1e88e5;
-    text-decoration: underline;
+    color: #76bdff;
 }
 
 .bio a:hover {
-    color: #fbff00;
+    color: #ffb876;
+    transition: color 0.2s ease,
 }
 
 .hero-image {
