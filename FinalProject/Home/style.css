@@ -37,6 +37,7 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
+    gap: 12px;
 }
 
 .nav-links a,
@@ -44,9 +45,8 @@ body {
     color: white;
     border: 1px solid #444444;
     text-decoration: none;
-    margin-left: 12px;
     padding: 4px 8px;
-    display: inline-block;
+    display: block;
     background: transparent;
     cursor: pointer;
     font-size: 0.5em;
@@ -71,7 +71,6 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
-    margin-left: 12px;
 }
 
 .dropdown-main {
