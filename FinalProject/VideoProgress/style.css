@@ -1,0 +1,196 @@
+body {
+  background-color: #0b0b0b; 
+  color: #ffffff;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 2em;
+  margin: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: #000000;
+  border-bottom: 2px solid #76bdff;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-links a,
+.dropdown-main {
+  color: white;
+  border: 1px solid #444444;
+  text-decoration: none;
+  padding: 4px 8px;
+  display: block;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.75em;
+  font-family: inherit;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover,
+.dropdown-main:hover {
+  background-color: #1e88e5;
+  border-color: #ffffff;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.nav-links a.active {
+  font-weight: bold;
+  background-color: #444444;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-main {
+  margin-left: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+  z-index: 10;
+  border: 1px solid #333333;
+  padding-top: 5px;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #333333;
+  margin-left: 0;
+  transform: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-main {
+  background-color: #1e88e5;
+  border-color: #ffffff;
+}
+
+.dropdown-content a:hover {
+  background-color: #333333;
+  color: #76bdff;
+  transform: none;
+}
+
+.video-progress {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.video-progress-section {
+  background: #151515;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #444444;
+  width: 100%;
+  max-width: 900px;
+}
+
+.video-progress-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.5em;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-bottom: 24px;
+}
+
+.stage-of-production {
+}
+
+.stage-name {
+  font-size: 0.75em;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  background-color: #1a1a1a;
+  border: 1px solid #444444;
+  border-radius: 4px;
+  height: 35px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #76bdff;
+  color: #0b0b0b;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  font-weight: bold;
+  font-size: 0.5em;
+  transition: width 0.8s ease-in-out;
+}
+
+.separator {
+  border: none;
+  border-top: 1px dashed #444444;
+  margin: 40px 0;
+}
+
+.timer-display {
+  text-align: center;
+}
+
+.timer-digits {
+  font-size: 1.5em;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: monospace;
+  margin: 20px 0;
+}
+
+.timer-subtext {
+  font-size: 0.5em;
+  color: #aaaaaa;
+}
