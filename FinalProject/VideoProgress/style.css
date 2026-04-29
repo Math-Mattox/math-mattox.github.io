@@ -116,9 +116,11 @@ body {
 }
 
 .video-progress {
-  padding: 20px;
+  padding: 50px 5%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
 .video-progress-section {
@@ -131,14 +133,12 @@ body {
 }
 
 .video-progress-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  display: block;
+  text-align: center;
   font-size: 1.5em;
   font-weight: 800;
   color: #ffffff;
   text-decoration: underline;
-  text-underline-offset: 4px;
   margin-bottom: 24px;
 }
 
