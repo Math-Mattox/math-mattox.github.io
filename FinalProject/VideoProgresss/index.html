@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mattox Ward - Video Progress</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo" class="logo-image">
+      <span class="brand-name">Mattox Ward</span>
+    </div>
+    <div class="nav-links">
+      <a href="/FinalProject/Home/index.html">Home</a>
+      <a href="/FinalProject/AboutMe/index.html">About Me</a>
+      <div class="dropdown">
+        <a href="#" class="dropdown-main">Portfolio ▾</a>
+          <div class="dropdown-content">
+            <a href="/FinalProject/Portfolio/Video-Editing/index.html">Video Editing</a>
+            <a href="/FinalProject/Portfolio/Graphic-Design/index.html">Graphic Design</a>
+            <a href="/FinalProject/Portfolio/Photography/index.html">Photography</a>
+            <a href="/FinalProject/Portfolio/Journalism/index.html">Journalism</a>
+          </div>
+      </div>
+      <a href="/FinalProject/Achievements/index.html">Achievements</a>
+      <a href="/FinalProject/VideoProgresss/index.html" class="active">Video Progress</a>
+      <a href="/FinalProject/Contact/index.html">Contact</a>
+    </div>
+  </nav>
+
+  <main class="video-progress">
+    <section class="video-progress-section">
+      <div class="video-progress-content">
+        <h2 class="video-progress-header">CURRENT VIDEO PROGRESS</h2> 
+
+        <div class="stage-of-production">
+          <h3 class="stage-name">RESEARCHING</h3>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 100%;">100%</div>
+          </div>
+        </div>
+
+        <div class="stage-of-production">
+          <h3 class="stage-name">SCRIPTWRITING</h3>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 80%;">80%</div>
+          </div>
+        </div>
+
+        <div class="stage-of-production">
+          <h3 class="stage-name">EDITING</h3>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 45%;">45%</div>
+          </div>
+        </div>
+
+        <hr class="separator">
+
+        <div class="timer-display">
+          <h2 class="video-progress-header">TIME SINCE LAST UPLOAD</h2>
+          <div id="upload-timer" class="timer-digits">0d 00h 00m 00s</div>
+          <p class="timer-subtext">Since August 7, 2023 at 4:00PM EDT</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
