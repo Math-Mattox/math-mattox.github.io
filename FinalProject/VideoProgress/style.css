@@ -116,16 +116,16 @@ body {
 }
 
 .video-progress {
-  padding: 50px 5%;
+  padding: 10px 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 }
 
 .video-progress-section {
   background: #151515;
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
   border-radius: 4px;
   border: 1px solid #444444;
   width: 100%;
@@ -139,7 +139,9 @@ body {
   font-weight: 800;
   color: #ffffff;
   text-decoration: underline;
+  margin-top: 0;
   margin-bottom: 24px;
+  justify-content: center;
 }
 
 .stage-of-production {
@@ -149,6 +151,7 @@ body {
   font-size: 0.75em;
   font-weight: 800;
   color: #ffffff;
+  text-align: center;
 }
 
 .progress-bar-bg {
@@ -166,16 +169,12 @@ body {
   color: #0b0b0b;
   display: flex;
   align-items: center;
-  padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 0;
   font-weight: bold;
   font-size: 0.5em;
+  justify-content: flex-end;
   transition: width 0.8s ease-in-out;
-}
-
-.separator {
-  border: none;
-  border-top: 1px dashed #444444;
-  margin: 40px 0;
 }
 
 .timer-display {
