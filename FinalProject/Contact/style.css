@@ -192,3 +192,12 @@ body {
     margin-top: 20px;
     font-size: 0.5em;
 }
+
+/* Mobile Formatting */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image { margin: 0 auto; }
+}
