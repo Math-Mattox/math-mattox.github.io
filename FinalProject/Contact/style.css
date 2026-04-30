@@ -183,7 +183,7 @@ body {
     font-family: inherit;
 }
 
-.contact-btn:hover {
+.contact-button:hover {
     background: #ffffff;
     transform: scale(1.02);
 }
