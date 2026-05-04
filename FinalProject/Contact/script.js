@@ -1,10 +1,19 @@
 document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevents the page from refreshing
-    
-    const status = document.getElementById('formStatus');
-    status.innerText = "Sending your message...";
-    status.style.color = "#76bdff";
+    event.preventDefault();
 
+    const status = document.getElementById('formStatus');
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // 1) Sending the Message
+    status.innerText = "Sending your message...";
+    status.style.color = "#ffffff";
+
+    // 2) Checking if Form is Valid
+    if (name === "" || email === "" || message === "") {
+        
+    
     // Indicate a successful sent message
     setTimeout(() => {
         status.innerText = "Message sent successfully! I'll get back to you soon.";
