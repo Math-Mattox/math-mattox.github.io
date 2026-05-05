@@ -137,18 +137,20 @@ body {
 }
 
 .video-title {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 800;
   margin: 0 0 10px 0;
   color: #ffffff;
-  line-height: 0.9;
+  line-height: 1.25;
+  text-align: center;
 }
 
 .video-blurb {
-  font-size: 10px;
+  font-size: 16px;
   color: #aaaaaa;
-  line-height: 1.25;
+  line-height: 1.5;
   margin: 0 0 10px 0;
+  text-align: center;
 }
 
 /* Mobile — stack to single column */
