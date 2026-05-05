@@ -174,7 +174,7 @@ body {
   justify-content: flex-end;
 }
 
-.progress-bar-fill.full {
+.progress-bar-fill[style*="100%"] {
   padding-left: 12px;
 }
 
