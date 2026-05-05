@@ -201,7 +201,6 @@ body {
     gap: 16px;
     font-size: 1.5em;
     font-weight: 800;
-    letter-spacing: 0.05em;
     color: #ffffff;
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -230,7 +229,6 @@ body {
 .resume-role {
     font-size: 0.85em;
     font-weight: 800;
-    letter-spacing: 0.06em;
     color: #ffffff;
     margin: 0 0 4px 0;
 }
@@ -238,17 +236,17 @@ body {
 .resume-location-date {
     font-size: 0.65em;
     color: #aaaaaa;
-    margin: 2px 0 4px 0;
+    margin: 2px 0 2px 0;
 }
 
 .resume-description {
     font-size: 0.7em;
     color: #dddddd;
-    margin: 2px 0 4px 0;
+    margin: 2px 0 2px 0;
 }
 
 .resume-skills {
-    font-size: 0.62em;
+    font-size: 0.6em;
     color: #888888;
     margin: 0;
 }
@@ -268,5 +266,7 @@ body {
         flex-direction: column;
         text-align: center;
     }
-    .hero-image { margin: 0 auto; }
+    .hero-image {
+        margin: 0 auto;
+    }
 }
