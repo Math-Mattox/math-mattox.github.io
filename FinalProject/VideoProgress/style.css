@@ -175,7 +175,7 @@ body {
 }
 
 .progress-bar-fill[style*="100%"] {
-  padding-left: 12px;
+  padding-left: 40px;
 }
 
 .timer-display {
