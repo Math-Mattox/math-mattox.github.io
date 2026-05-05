@@ -64,6 +64,12 @@ body {
 .nav-links a.active {
     font-weight: bold;
     background-color: #444444;
+    border-color: #ffffff;
+}
+
+.nav-links a.incomplete {
+    color: #ff5454;
+    border-color: #ff5454;
 }
 
 /* Dropdown */
