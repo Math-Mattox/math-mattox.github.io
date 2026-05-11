@@ -32,8 +32,8 @@
     border: 2px solid #1a1a1a;
     padding: 0.25in 0.28in;
     display: grid;
-    grid-template-columns: repeat(1.05fr 1fr 1fr 0.92fr);
-    gap: 0 4px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 8px;
   }
 
   .header {
@@ -57,7 +57,7 @@
     color: #555;
   }
 
-  .section { margin-bottom: 3px; }
+  .section { margin-bottom: 6px; }
   .section h2 {
     font-family: 'JetBrains Mono', monospace;
     font-size: 6.5pt;
@@ -93,37 +93,37 @@
   }
   pre {
     display: block;
-    padding: 2px 4px;
-    margin: 1px 0;
+    padding: 3px 5px;
+    margin: 2px 0;
     border-left: 2px solid #b84a00;
     white-space: pre;
-    line-height: 1.35;
+    line-height: 1.55;
   }
   .comment { color: #888; }
 
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1px 0;
-    font-size: 5.5pt;
+    margin: 2px 0;
+    font-size: 5.8pt;
   }
   th {
     font-family: 'JetBrains Mono', monospace;
     font-size: 5.5pt;
     background: #e8e3d9;
     text-align: left;
-    padding: 1px 2px;
+    padding: 1.5px 3px;
     border: 1px solid #ccc;
   }
   td {
-    padding: 1px 2px;
+    padding: 1.5px 3px;
     border: 1px solid #ddd;
     vertical-align: top;
-    line-height: 1.2;
+    line-height: 1.4;
   }
   tr:nth-child(even) td { background: #faf8f3; }
 
-  .col-divider { border-left: 1px dashed #ccc; padding-left: 4px; }
+  .col-divider { border-left: 1px dashed #ccc; padding-left: 8px; }
   .span2 { grid-column: span 2; }
   .span3 { grid-column: span 3; }
   .span4 { grid-column: 1 / -1; }
