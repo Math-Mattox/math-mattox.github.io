@@ -18,6 +18,14 @@
     gap: 24px;
   }
 
+  .page-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: #888;
+    align-self: flex-start;
+    margin-left: calc(50vw - 5.25in);
+  }
+
   .page {
     width: 13in;
     background: #fffdf8;
@@ -62,7 +70,7 @@
     margin-bottom: 3px;
   }
   .section h2.new {
-    background: #000000;
+    background: #b84a00;
   }
 
   p, li {
@@ -73,7 +81,7 @@
   ul { padding-left: 9px; }
   li { margin-bottom: 1px; }
   strong { font-weight: 700; color: #1a1a1a; }
-  em { font-style: normal; color: #85caff; font-weight: 600; }
+  em { font-style: normal; color: #b84a00; font-weight: 600; }
 
   code, pre {
     font-family: 'JetBrains Mono', monospace;
@@ -87,7 +95,7 @@
     display: block;
     padding: 3px 5px;
     margin: 2px 0;
-    border-left: 2px solid #85caff;
+    border-left: 2px solid #b84a00;
     white-space: pre;
     line-height: 1.55;
   }
@@ -123,7 +131,7 @@
   .note { font-size: 5.5pt; color: #888; font-style: italic; margin-top: 1px; }
   .new-badge {
     display: inline-block;
-    background: #85caff;
+    background: #b84a00;
     color: white;
     font-family: 'JetBrains Mono', monospace;
     font-size: 5pt;
@@ -136,10 +144,19 @@
   @media print {
     body { background: white; padding: 0; gap: 0; }
     .page { border: 1px solid #ccc; page-break-after: always; }
+    .page-label { display: none; }
   }
 </style>
 </head>
 <body>
+
+<!-- ████████████████  PAGE 1  ████████████████ -->
+<div class="page-label">SURFACE 1 OF 3 — Print landscape, fit to page</div>
+<div class="page">
+  <div class="header">
+    <h1>CIS 116 — Final Exam Reference &nbsp;|&nbsp; Surface 1: Foundations</h1>
+    <span>Mattox Ward &nbsp;|&nbsp; Exam: Tue May 12, 8–10 AM &nbsp;|&nbsp; 3 surfaces allowed</span>
+  </div>
 
   <!-- COL 1 -->
   <div class="span1 section">
@@ -345,6 +362,14 @@ int ComputeTotal(double price, int qty) {
     </ul>
   </div>
 </div>
+
+<!-- ████████████████  PAGE 2  ████████████████ -->
+<div class="page-label">SURFACE 2 OF 3 — NEW material since Exam 2</div>
+<div class="page">
+  <div class="header">
+    <h1>CIS 116 — Final Exam Reference &nbsp;|&nbsp; Surface 2: While Loops &amp; New Concepts <span class="new-badge">NEW</span></h1>
+    <span>Mattox Ward &nbsp;|&nbsp; Exam: Tue May 12, 8–10 AM</span>
+  </div>
 
   <!-- COL 1 -->
   <div class="span1 section">
@@ -576,6 +601,14 @@ while (correct == 'N') {   <span class="comment">// repeat until confirmed</span
     <p class="note">correct must be declared as <code>char correct;</code> — not <code>char correct[80]</code>. Single char variables compare with <code>==</code>.</p>
   </div>
 </div>
+
+<!-- ████████████████  PAGE 3  ████████████████ -->
+<div class="page-label">SURFACE 3 OF 3 — Quick reference, gotchas, and patterns</div>
+<div class="page">
+  <div class="header">
+    <h1>CIS 116 — Final Exam Reference &nbsp;|&nbsp; Surface 3: Patterns, Gotchas &amp; Full Examples</h1>
+    <span>Mattox Ward &nbsp;|&nbsp; Exam: Tue May 12, 8–10 AM</span>
+  </div>
 
   <!-- COL 1 -->
   <div class="span1 section">
