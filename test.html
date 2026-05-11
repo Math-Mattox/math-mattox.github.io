@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CIS 116 Exam Cheat Sheet</title>
+<title>CIS 116 Final Exam Cheat Sheet</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap');
 
@@ -12,25 +12,30 @@
     font-family: 'DM Sans', sans-serif;
     background: #f0ece3;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+    gap: 24px;
+  }
+
+  .page-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: #888;
+    align-self: flex-start;
+    margin-left: calc(50vw - 5.25in);
   }
 
   .page {
     width: 10.5in;
-    min-height: 8in;
     background: #fffdf8;
     border: 2px solid #1a1a1a;
-    padding: 0.28in 0.3in;
+    padding: 0.25in 0.28in;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
     gap: 0 8px;
-    position: relative;
   }
 
-  /* ---- HEADER ---- */
   .header {
     grid-column: 1 / -1;
     display: flex;
@@ -42,25 +47,20 @@
   }
   .header h1 {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 15pt;
+    font-size: 14pt;
     font-weight: 700;
-    letter-spacing: -0.5px;
     color: #1a1a1a;
   }
   .header span {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 7.5pt;
+    font-size: 7pt;
     color: #555;
-    font-weight: 400;
   }
 
-  /* ---- SECTION ---- */
-  .section {
-    margin-bottom: 6px;
-  }
+  .section { margin-bottom: 6px; }
   .section h2 {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 6.8pt;
+    font-size: 6.5pt;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -69,10 +69,12 @@
     padding: 1.5px 4px;
     margin-bottom: 3px;
   }
+  .section h2.new {
+    background: #b84a00;
+  }
 
-  /* ---- TEXT ---- */
   p, li {
-    font-size: 6.5pt;
+    font-size: 6.3pt;
     line-height: 1.45;
     color: #222;
   }
@@ -81,10 +83,9 @@
   strong { font-weight: 700; color: #1a1a1a; }
   em { font-style: normal; color: #b84a00; font-weight: 600; }
 
-  /* ---- CODE ---- */
   code, pre {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 6pt;
+    font-size: 5.8pt;
     background: #f0ece3;
     padding: 0 2px;
     border-radius: 2px;
@@ -98,18 +99,17 @@
     white-space: pre;
     line-height: 1.55;
   }
-  .comment { color: #777; }
+  .comment { color: #888; }
 
-  /* ---- TABLE ---- */
   table {
     width: 100%;
     border-collapse: collapse;
     margin: 2px 0;
-    font-size: 6pt;
+    font-size: 5.8pt;
   }
   th {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 5.8pt;
+    font-size: 5.5pt;
     background: #e8e3d9;
     text-align: left;
     padding: 1.5px 3px;
@@ -123,38 +123,83 @@
   }
   tr:nth-child(even) td { background: #faf8f3; }
 
-  /* ---- DIVIDER ---- */
-  .col-divider {
-    border-left: 1px dashed #ccc;
-    padding-left: 8px;
-  }
-
+  .col-divider { border-left: 1px dashed #ccc; padding-left: 8px; }
   .span2 { grid-column: span 2; }
+  .span3 { grid-column: span 3; }
+  .span4 { grid-column: 1 / -1; }
   .span1 { grid-column: span 1; }
-
-  .note {
-    font-size: 5.8pt;
-    color: #888;
-    font-style: italic;
-    margin-top: 1px;
+  .note { font-size: 5.5pt; color: #888; font-style: italic; margin-top: 1px; }
+  .new-badge {
+    display: inline-block;
+    background: #b84a00;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 5pt;
+    padding: 0 3px;
+    border-radius: 2px;
+    margin-left: 3px;
+    vertical-align: middle;
   }
 
   @media print {
-    body { background: white; padding: 0; }
-    .page { border: none; box-shadow: none; }
+    body { background: white; padding: 0; gap: 0; }
+    .page { border: 1px solid #ccc; page-break-after: always; }
+    .page-label { display: none; }
   }
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- HEADER -->
+<!-- ████████████████  PAGE 1  ████████████████ -->
+<div class="page-label">SURFACE 1 OF 3 — Print landscape, fit to page</div>
+<div class="page">
   <div class="header">
-    <h1>CIS 116 — C++ Exam Reference Sheet</h1>
-    <span>Mattox Ward &nbsp;|&nbsp; Intro Programming &nbsp;|&nbsp; Exam 2</span>
+    <h1>CIS 116 — Final Exam Reference &nbsp;|&nbsp; Surface 1: Foundations</h1>
+    <span>Mattox Ward &nbsp;|&nbsp; Exam: Tue May 12, 8–10 AM &nbsp;|&nbsp; 3 surfaces allowed</span>
   </div>
 
-  <!-- COL 1: DATA TYPES + VARIABLES -->
+  <!-- COL 1 -->
+  <div class="span1 section">
+    <h2>Program Order</h2>
+    <pre><span class="comment">// 1. Includes + namespace</span>
+#include &lt;iostream&gt;  <span class="comment">// cin, cout, endl</span>
+#include &lt;fstream&gt;   <span class="comment">// ifstream, ofstream</span>
+#include &lt;iomanip&gt;   <span class="comment">// setw, setprecision...</span>
+#include &lt;cstring&gt;   <span class="comment">// strlen</span>
+using namespace std;
+
+<span class="comment">// 2. Header comment</span>
+<span class="comment">// Programmer:   Mattox Ward</span>
+<span class="comment">// Date Due:     Friday, May 1, 2026</span>
+<span class="comment">// Project:      Lab11</span>
+<span class="comment">// Description:  What the program does.</span>
+
+<span class="comment">// 3. Global constants (NEVER variables)</span>
+const double TAX_RATE = 0.0875;
+const int STRING_WIDTH = 80;
+
+<span class="comment">// 4. Function prototypes</span>
+void GetFileName(char [80]);
+void GetData(ifstream &amp;, char [80], double &amp;);
+
+<span class="comment">// 5. main()</span>
+int main(void) {
+    <span class="comment">// a. ALL local variables at top</span>
+    char fileName[80];
+    double total;
+    ifstream dataFile;
+
+    <span class="comment">// b. Get input</span>
+    <span class="comment">// c. Calculate</span>
+    <span class="comment">// d. Display</span>
+    return 0;
+}
+
+<span class="comment">// 6. Function definitions (after main)</span></pre>
+    <p class="note">ALL variables must be defined in the function — locally under the heading, or passed in as a parameter.</p>
+  </div>
+
+  <!-- COL 2 -->
   <div class="span1 section">
     <h2>Data Types</h2>
     <table>
@@ -162,113 +207,43 @@
       <tr><td><code>char</code></td><td>1B</td><td>one character, use <code>'A'</code></td></tr>
       <tr><td><code>int</code></td><td>4B</td><td>whole numbers</td></tr>
       <tr><td><code>double</code></td><td>8B</td><td>preferred decimal type</td></tr>
-      <tr><td><code>float</code></td><td>4B</td><td>decimal, less precise than double</td></tr>
+      <tr><td><code>float</code></td><td>4B</td><td>less precise than double</td></tr>
+      <tr><td><code>bool</code></td><td>1B</td><td>true / false</td></tr>
     </table>
-    <p class="note">Mixing types: result takes the "larger" type. Storing big→small loses data!</p>
-  </div>
+    <p class="note">Mixing types: result takes "larger" type. Storing big→small loses data.</p>
 
-  <div class="span1 section" style="margin-top:0">
-    <h2>Identifiers &amp; Constants</h2>
+    <h2 style="margin-top:5px">Identifiers &amp; Constants</h2>
     <ul>
-      <li>Start with a <strong>letter</strong>, letters + digits only (underscore ok)</li>
+      <li>Start with a <strong>letter</strong>; letters + digits + <code>_</code> only</li>
       <li>Case-sensitive: <code>name ≠ Name</code></li>
-      <li>No reserved words. Must be <strong>descriptive</strong>.</li>
+      <li>Must be <strong>descriptive</strong> — graded on this!</li>
       <li>camelCase vars: <code>firstName</code></li>
-      <li>UPPER_CASE consts: <code>NUM_PEOPLE</code></li>
-      <li>PascalCase funcs: <code>GetData</code></li>
+      <li>UPPER_CASE consts: <code>TAX_RATE</code></li>
+      <li>PascalCase functions: <code>GetData</code></li>
     </ul>
-    <pre><span class="comment">// Named constant — declared GLOBALLY (above main)</span>
-const int STRING_WIDTH = 80;
+    <pre><span class="comment">// Declared GLOBALLY above main</span>
 const double TAX_RATE = 0.0875;</pre>
-    <p class="note"><strong>const</strong> must be declared globally, above main. Never use variables globally.</p>
+
+    <h2 style="margin-top:5px">Arithmetic &amp; Operators</h2>
+    <p><strong>Order:</strong> unary <code>-</code> → <code>* / %</code> → <code>+ -</code> (left→right)</p>
+    <pre>27 / 4  = 6   <span class="comment">// int division, truncates</span>
+27 % 4  = 3   <span class="comment">// modulus = remainder</span></pre>
+    <p><strong>Rounding:</strong> <code>(int)(val + 0.5)</code></p>
+    <p><strong>Ceiling division:</strong> <code>(qty + cap - 1) / cap</code></p>
   </div>
 
-  <!-- COL 3: OPERATORS -->
+  <!-- COL 3 -->
   <div class="span1 section col-divider">
-    <h2>Arithmetic &amp; Operators</h2>
-    <p><strong>Order (PEMD%AS):</strong> unary <code>-</code> → <code>* / %</code> → <code>+ -</code> (left to right)</p>
-    <pre>27 / 4  = 6     <span class="comment">// integer division, truncates</span>
-27 % 4  = 3     <span class="comment">// modulus = remainder</span>
-11 / 3  = 3     <span class="comment">// NOT 3.67!</span>
-11 % 3  = 2</pre>
-
-    <p><strong>Rounding trick</strong> (add 0.5 before casting):</p>
-    <pre>changeInCents = (int)(amount * 100 + 0.5);</pre>
-
-    <p><strong>Ceiling division</strong> (round UP without floats):</p>
-    <pre>trucks = (qty + cap - 1) / cap;</pre>
-
-    <h2 style="margin-top:5px">Relational &amp; Logical</h2>
-    <table>
-      <tr><th>Op</th><th>Meaning</th><th>Example</th></tr>
-      <tr><td><code>==</code></td><td>equal</td><td><code>a == 5</code></td></tr>
-      <tr><td><code>!=</code></td><td>not equal</td><td><code>a != 0</code></td></tr>
-      <tr><td><code>&amp;&amp;</code></td><td>AND</td><td><code>a&gt;0 &amp;&amp; a&lt;10</code></td></tr>
-      <tr><td><code>||</code></td><td>OR</td><td><code>c=='Y'||c=='y'</code></td></tr>
-      <tr><td><code>!</code></td><td>NOT</td><td><code>!done</code></td></tr>
-    </table>
-    <p style="margin-top:2px"><strong>De Morgan's Law:</strong><br>
-    <code>!(A || B)</code> → <code>!A &amp;&amp; !B</code><br>
-    <code>!(A &amp;&amp; B)</code> → <code>!A || !B</code></p>
-  </div>
-
-  <!-- COL 4: DECISIONS -->
-  <div class="span1 section col-divider">
-    <h2>Decision Structures</h2>
-    <pre><span class="comment">// if / else if / else</span>
-if (age &lt;= 12) {
-    cout &lt;&lt; "child" &lt;&lt; endl;
-} else if (age &lt;= 19) {
-    cout &lt;&lt; "teen" &lt;&lt; endl;
-} else {
-    cout &lt;&lt; "adult" &lt;&lt; endl;
-}</pre>
-    <pre><span class="comment">// Boolean constant as flag</span>
-const bool DEBUG_MODE = false;
-if (DEBUG_MODE)
-    cout &lt;&lt; "test: " &lt;&lt; val &lt;&lt; endl;</pre>
-    <ul>
-      <li>Braces optional for <strong>single-statement</strong> body</li>
-      <li><strong>Mutually exclusive</strong>: use if/else, not two ifs</li>
-      <li>Can't use <code>==</code> on strings — use <code>strcmp()</code></li>
-    </ul>
-  </div>
-
-  <!-- ROW 2 -->
-
-  <!-- COL 1: INPUT/OUTPUT -->
-  <div class="span1 section">
     <h2>Input / Output</h2>
     <pre>#include &lt;iostream&gt;
-using namespace std;</pre>
-    <pre><span class="comment">// Output</span>
+using namespace std;
+
 cout &lt;&lt; "Value: " &lt;&lt; x &lt;&lt; endl;
-
-<span class="comment">// Input — leaves newline behind!</span>
 cin &gt;&gt; x;
-cin.ignore(1000, '\n'); <span class="comment">// flush it</span>
+cin.ignore(1000, '\n'); <span class="comment">// after >> if getline follows</span>
+cin.getline(name, 80); <span class="comment">// reads full line w/ spaces</span></pre>
 
-<span class="comment">// Read whole line (with spaces)</span>
-cin.getline(name, 80);
-
-<span class="comment">// RULE: always ignore() after &gt;&gt;</span>
-<span class="comment">//       before a getline!</span>
-cin &gt;&gt; num;
-cin.ignore(1000, '\n');
-cin.getline(name, 80); <span class="comment">// safe now</span></pre>
-
-    <h2 style="margin-top:5px">Escape Sequences</h2>
-    <table>
-      <tr><td><code>\n</code></td><td>newline</td><td><code>\t</code></td><td>tab</td></tr>
-      <tr><td><code>\"</code></td><td>quote</td><td><code>\\</code></td><td>backslash</td></tr>
-      <tr><td><code>\0</code></td><td>null (char 0)</td><td><code>\r</code></td><td>carriage ret</td></tr>
-    </table>
-    <p class="note"><code>'\0'</code> ≠ <code>'0'</code>. Null = char 0; <code>'0'</code> = char 48.</p>
-  </div>
-
-  <!-- COL 2: FORMATTED OUTPUT -->
-  <div class="span1 section">
-    <h2>Formatted Output <code style="font-size:5.5pt">#include &lt;iomanip&gt;</code></h2>
+    <h2 style="margin-top:5px">Formatted Output <code style="font-size:5pt">#include &lt;iomanip&gt;</code></h2>
     <table>
       <tr><th>Manipulator</th><th>Effect</th><th>Sticky?</th></tr>
       <tr><td><code>fixed</code></td><td>decimal notation</td><td>✓</td></tr>
@@ -279,47 +254,27 @@ cin.getline(name, 80); <span class="comment">// safe now</span></pre>
       <tr><td><code>showpoint</code></td><td>force decimal pt</td><td>✓</td></tr>
     </table>
     <pre>cout &lt;&lt; fixed &lt;&lt; setprecision(2);
-cout &lt;&lt; left  &lt;&lt; setw(20) &lt;&lt; "Name:"
-     &lt;&lt; right &lt;&lt; setw(10) &lt;&lt; value &lt;&lt; endl;</pre>
-    <p class="note"><code>setw()</code> is NOT sticky — reapply every time you need it.</p>
-    <p class="note"><code>showpoint</code> forces e.g. <code>5.00</code> instead of just <code>5</code></p>
-  </div>
+cout &lt;&lt; left  &lt;&lt; setw(25) &lt;&lt; name
+     &lt;&lt; right &lt;&lt; setw(10) &lt;&lt; price &lt;&lt; endl;</pre>
+    <p class="note">Order: alignment → setw() → variable. setw() is NOT sticky — reapply every time.</p>
 
-  <!-- COL 3: CHAR ARRAYS + FOR LOOP -->
-  <div class="span1 section col-divider">
-    <h2>Char Arrays (Strings)</h2>
-    <pre>char name[80]; <span class="comment">// holds up to 79 chars + '\0'</span>
-<span class="comment">// null-terminated: good data ends with '\0'</span>
-<span class="comment">// '\0' is char 0 — NOT the same as '0' (char 48)!</span></pre>
-    <pre><span class="comment">// Read whole line (spaces included)</span>
-cin.getline(name, 80);
-fileVar.getline(name, 80);
-
-<span class="comment">// Read one word (stops at space)</span>
-cin &gt;&gt; name;
-fileVar &gt;&gt; name;</pre>
-    <pre><span class="comment">// Iterating through a char array</span>
-for (int i = 0; i &lt; 80 &amp;&amp; name[i] != '\0'; i++)
-    cout &lt;&lt; name[i];</pre>
-
-    <h2 style="margin-top:5px">For Loop</h2>
-    <pre><span class="comment">// Basic counted loop</span>
-for (int i = 0; i &lt; n; i++) {
-    <span class="comment">// body</span>
-}
-
-<span class="comment">// Loop over file records</span>
-salesFile &gt;&gt; numSales;
-for (int i = 0; i &lt; numSales; i++) {
-    salesFile &gt;&gt; serial &gt;&gt; price &gt;&gt; code;
-    total = total + price;
+    <h2 style="margin-top:5px">Char Arrays <code style="font-size:5pt">#include &lt;cstring&gt;</code></h2>
+    <pre>char name[80]; <span class="comment">// holds 79 chars + '\0'</span>
+<span class="comment">// '\0' = null (char 0) ≠ '0' (char 48)!</span>
+cin.getline(name, 80);   <span class="comment">// full line</span>
+cin &gt;&gt; name;             <span class="comment">// one word only</span>
+strlen(name)             <span class="comment">// returns char count (not incl. '\0')</span></pre>
+    <pre><span class="comment">// Validate length with strlen</span>
+while(strlen(sku) != 12) {
+    cout &lt;&lt; "Enter exactly 12 digits: ";
+    cin.getline(sku, 80);
 }</pre>
   </div>
 
-  <!-- COL 4: FILE I/O -->
+  <!-- COL 4 -->
   <div class="span1 section col-divider">
-    <h2>File I/O <code style="font-size:5.5pt">#include &lt;fstream&gt;</code></h2>
-    <pre><span class="comment">// INPUT FILE</span>
+    <h2>File I/O <code style="font-size:5pt">#include &lt;fstream&gt;</code></h2>
+    <pre><span class="comment">// INPUT</span>
 ifstream myFile;
 myFile.open("data.txt");
 myFile &gt;&gt; num;
@@ -327,128 +282,544 @@ myFile.ignore(1000, '\n');
 myFile.getline(name, 80);
 myFile.close();
 
-<span class="comment">// OUTPUT FILE</span>
+<span class="comment">// OUTPUT</span>
 ofstream outFile;
 outFile.open("results.txt");
 outFile &lt;&lt; fixed &lt;&lt; setprecision(2);
-outFile &lt;&lt; left &lt;&lt; setw(15) &lt;&lt; label
+outFile &lt;&lt; left &lt;&lt; setw(20) &lt;&lt; label
         &lt;&lt; right &lt;&lt; setw(10) &lt;&lt; val &lt;&lt; endl;
-outFile.close();</pre>
-    <p class="note">Use <code>outFile &lt;&lt;</code> exactly like <code>cout &lt;&lt;</code> — all the same formatting works!</p>
-    <p class="note">Always <code>.close()</code> both files when done.</p>
+outFile.close();
+
+<span class="comment">// APPEND (add to end of file)</span>
+outFile.open("results.txt", ios::app);</pre>
+    <p class="note">Use <code>outFile &lt;&lt;</code> exactly like <code>cout &lt;&lt;</code>. Always <code>.close()</code> when done.</p>
+
+    <h2 style="margin-top:5px">Decisions</h2>
+    <pre>if (age &lt; 18) {
+    cout &lt;&lt; "minor" &lt;&lt; endl;
+} else if (age &lt; 65) {
+    cout &lt;&lt; "adult" &lt;&lt; endl;
+} else {
+    cout &lt;&lt; "senior" &lt;&lt; endl;
+}</pre>
+    <table>
+      <tr><th>Op</th><th>Meaning</th><th>Op</th><th>Meaning</th></tr>
+      <tr><td><code>==</code></td><td>equal</td><td><code>&amp;&amp;</code></td><td>AND</td></tr>
+      <tr><td><code>!=</code></td><td>not equal</td><td><code>||</code></td><td>OR</td></tr>
+      <tr><td><code>&lt; &gt;</code></td><td>less/greater</td><td><code>!</code></td><td>NOT</td></tr>
+    </table>
+    <p style="margin-top:2px"><strong>De Morgan's:</strong> <code>!(A||B)</code> = <code>!A&amp;&amp;!B</code></p>
+    <p><strong>Mutually exclusive</strong> = use if/else, not separate ifs</p>
+    <p class="note">Can't compare char arrays with ==. Use one char variable: <code>char code; code == 's'</code></p>
   </div>
 
-  <!-- ROW 3: FUNCTIONS (full width) -->
-  <div class="span2 section" style="margin-top:0">
-    <h2>Functions</h2>
-    <pre><span class="comment">// 1. PROTOTYPE (declaration) — above main, describes the function</span>
-void ShowLine(char [80], double);       <span class="comment">// void = returns nothing</span>
-void GetData(double &amp;);                 <span class="comment">// & = pass by reference</span>
-int  ComputeAvg(int, int, int, int, int, int, int);  <span class="comment">// returns int</span>
-
-<span class="comment">// 2. CALL — inside main</span>
-GetData(amountToAdd);                   <span class="comment">// reference: changes the original</span>
-ShowLine(name, grade);                  <span class="comment">// value: uses a copy</span>
-avg = ComputeAvg(t1,t2,t3,t4,t5,t6,t7);
-cout &lt;&lt; ComputeAvg(t1,t2,t3,t4,t5,t6,t7) - 5 &lt;&lt; endl; <span class="comment">// return value in expression</span>
-
-<span class="comment">// 3. DEFINITION — after main</span>
-void GetData(double &amp; amountToAdd) {    <span class="comment">// & modifies the ORIGINAL variable</span>
-    cout &lt;&lt; "Enter amount: ";
-    cin &gt;&gt; amountToAdd;
-    cin.ignore(1000, '\n');
+  <!-- ROW 2 — FOR LOOP + FUNCTIONS -->
+  <div class="span2 section">
+    <h2>For Loop</h2>
+    <pre><span class="comment">// Counted loop: INIT; CONDITION; ADVANCING</span>
+for (int cnt = 0; cnt &lt; n; cnt++) {
+    <span class="comment">// body runs n times</span>
 }
-int ComputeAvg(int t1, int t2, int t3, int t4, int t5, int t6, int t7) {
-    int average;
-    average = (t1+t2+t3+t4+t5+t6+t7) / 7;
-    return average;             <span class="comment">// sends value BACK to caller</span>
+
+<span class="comment">// Loop tied to count from file</span>
+dataFile &gt;&gt; numItems;
+for (int i = 0; i &lt; numItems; i++) {
+    dataFile &gt;&gt; serial &gt;&gt; price &gt;&gt; code;
+    total = total + price;   <span class="comment">// accumulation</span>
+    count++;                 <span class="comment">// counter</span>
+}
+
+<span class="comment">// Display transaction number inside loop</span>
+cout &lt;&lt; "Transaction " &lt;&lt; (cnt + 1) &lt;&lt; " of " &lt;&lt; numTrans &lt;&lt; endl;</span></pre>
+  </div>
+
+  <div class="span2 section col-divider">
+    <h2>Functions</h2>
+    <pre><span class="comment">// PROTOTYPE (above main) — return type, name, param types only</span>
+void GetData(ifstream &amp;, char [80], double &amp;, int &amp;);
+int  ComputeTotal(double, int);   <span class="comment">// returns a value</span>
+
+<span class="comment">// CALL (in main or another function)</span>
+GetData(dataFile, name, price, qty);
+total = ComputeTotal(price, qty);
+cout &lt;&lt; ComputeTotal(price, qty) - 5 &lt;&lt; endl; <span class="comment">// return val in expression</span>
+
+<span class="comment">// DEFINITION (after main)</span>
+void GetData(ifstream &amp; f, char name[80], double &amp; price, int &amp; qty) {
+    f.getline(name, 80);
+    f &gt;&gt; price &gt;&gt; qty;
+    f.ignore(1000, '\n');
+}
+int ComputeTotal(double price, int qty) {
+    int result;
+    result = price * qty;
+    return result;
 }</pre>
     <ul>
-      <li><strong>Pass by value</strong> <code>(double x)</code> — makes a copy, original unchanged</li>
-      <li><strong>Pass by reference</strong> <code>(double &amp; x)</code> — shares memory, original IS changed</li>
-      <li><code>ifstream</code> / <code>ofstream</code> <strong>must always</strong> be by reference: <code>(ifstream &amp; f)</code></li>
-      <li>Local variables (under the heading) only visible inside that function</li>
-      <li>ALL variables must be defined in the function — under the heading OR passed in as parameters</li>
+      <li><strong>Pass by value</strong> <code>(double x)</code> — copy, original unchanged</li>
+      <li><strong>Pass by reference</strong> <code>(double &amp; x)</code> — shares memory, original changed</li>
+      <li><code>ifstream</code> / <code>ofstream</code> <strong>must always</strong> be by reference</li>
     </ul>
   </div>
+</div>
 
-  <div class="span2 section col-divider" style="margin-top:0">
-    <h2>Program Layout — Apply to Any Question</h2>
-    <pre><span class="comment">// ── STEP 1: INCLUDES (only what you need) ─────────────────────</span>
-#include &lt;iostream&gt;   <span class="comment">// cin, cout, endl</span>
-#include &lt;fstream&gt;    <span class="comment">// ifstream, ofstream</span>
-#include &lt;iomanip&gt;    <span class="comment">// setw, setprecision, fixed, left, right, showpoint</span>
-using namespace std;
+<!-- ████████████████  PAGE 2  ████████████████ -->
+<div class="page-label">SURFACE 2 OF 3 — NEW material since Exam 2</div>
+<div class="page">
+  <div class="header">
+    <h1>CIS 116 — Final Exam Reference &nbsp;|&nbsp; Surface 2: While Loops &amp; New Concepts <span class="new-badge">NEW</span></h1>
+    <span>Mattox Ward &nbsp;|&nbsp; Exam: Tue May 12, 8–10 AM</span>
+  </div>
 
-<span class="comment">// ── STEP 2: HEADER COMMENT ────────────────────────────────────</span>
-<span class="comment">// Programmer:        Mattox Ward</span>
-<span class="comment">// Date Due:          Friday, April 25, 2026</span>
-<span class="comment">// Project Number:    9</span>
-<span class="comment">// Project Name:      Laboratory09</span>
-<span class="comment">// Project Description: One or two sentences describing</span>
-<span class="comment">//                      what the program does.</span>
-
-<span class="comment">// ── STEP 3: GLOBAL CONSTANTS (never variables here!) ──────────</span>
-const int STRING_WIDTH = 80;
-const double TAX_RATE = 0.0875;
-
-<span class="comment">// ── STEP 4: FUNCTION PROTOTYPES (if using functions) ──────────</span>
-void GetFileName(char [80]);
-void GetData(ifstream &amp;, char [80], char [80], double &amp;, int &amp;);
-void DisplayResults(char [80], double, int);
-
-<span class="comment">// ── STEP 5: MAIN FUNCTION ─────────────────────────────────────</span>
-int main(void) {
-
-    <span class="comment">// 5a. Define ALL local variables at the top</span>
-    char fileName[80], custName[80];
-    double price, total;
-    int quantity;
-    ifstream dataFile;
-
-    <span class="comment">// 5b. Get input (ask user for filename, read rest from file)</span>
-    GetFileName(fileName);
-    GetData(dataFile, fileName, custName, price, quantity);
-
-    <span class="comment">// 5c. Calculate</span>
-    total = price * quantity * (1.0 + TAX_RATE);
-
-    <span class="comment">// 5d. Display output</span>
-    DisplayResults(custName, total, quantity);
-
-    return 0;   <span class="comment">// always last line of main</span>
-}
-
-<span class="comment">// ── STEP 6: FUNCTION DEFINITIONS (after main) ─────────────────</span>
-void GetFileName(char fileName[80]) {
-    cout &lt;&lt; "Enter file name: ";
-    cin &gt;&gt; fileName;
-    cin.ignore(1000, '\n');
-}
-void GetData(ifstream &amp; dataFile, char fileName[80],
-        char custName[80], double &amp; price, int &amp; quantity) {
-    dataFile.open(fileName);
-    dataFile.getline(custName, 80);
-    dataFile &gt;&gt; price &gt;&gt; quantity;
-    dataFile.close();
-}
-void DisplayResults(char custName[80], double total, int quantity) {
-    cout &lt;&lt; fixed &lt;&lt; setprecision(2);
-    cout &lt;&lt; left &lt;&lt; setw(20) &lt;&lt; custName
-         &lt;&lt; right &lt;&lt; setw(10) &lt;&lt; total &lt;&lt; endl;
+  <!-- COL 1 -->
+  <div class="span1 section">
+    <h2 class="new">While Loop — Basics</h2>
+    <p>A <strong>while</strong> loop repeats as long as its condition is true. Three parts: <strong>init</strong> (before loop), <strong>condition</strong> (checked each time), <strong>advancing</strong> (moves toward ending).</p>
+    <pre><span class="comment">// INIT</span>
+cnt = 0;
+while (cnt &lt; 100) {        <span class="comment">// CONDITION</span>
+    cout &lt;&lt; cnt &lt;&lt; endl;   <span class="comment">// BODY</span>
+    cnt = cnt + 2;         <span class="comment">// ADVANCING</span>
 }</pre>
+    <p class="note">for loops = tend to be COUNTING loops. while loops = tend to be SENTINEL loops.</p>
+
+    <h2 class="new" style="margin-top:5px">While Loop — Input Validation</h2>
+    <p>Get the value first (init), then loop while it's invalid (condition), re-getting inside (advancing).</p>
+    <pre><span class="comment">// Validate a number range</span>
+cout &lt;&lt; "Enter your age: ";
+cin &gt;&gt; age;                         <span class="comment">// INIT</span>
+while (age &lt;= 0 || age &gt; 125) {    <span class="comment">// CONDITION</span>
+    cout &lt;&lt; "Invalid. Enter valid age: ";
+    cin &gt;&gt; age;                     <span class="comment">// ADVANCING</span>
+}
+
+<span class="comment">// Validate a char value</span>
+cin &gt;&gt; formatCode;
+while (formatCode != 's' &amp;&amp; formatCode != 'p') {
+    cout &lt;&lt; "Enter s or p: ";
+    cin &gt;&gt; formatCode;
+}
+
+<span class="comment">// Validate a positive number</span>
+cin &gt;&gt; price;
+while (price &lt;= 0) {
+    cout &lt;&lt; "Enter a positive value: ";
+    cin &gt;&gt; price;
+}</pre>
+    <p class="note">When validating a char, use <code>char code;</code> (no [80]) so <code>!=</code> works correctly.</p>
+  </div>
+
+  <!-- COL 2 -->
+  <div class="span1 section">
+    <h2 class="new">Sentinel Loops</h2>
+    <p>A <strong>sentinel</strong> is a special value that signals "stop". The loop runs until it sees that value.</p>
+    <pre><span class="comment">// Sentinel: 0 or negative quits</span>
+cout &lt;&lt; "Enter number (0 quits): ";
+cin &gt;&gt; num;               <span class="comment">// INIT (priming read)</span>
+while (num &gt; 0) {         <span class="comment">// CONDITION</span>
+    dogYears = num * 7;
+    cout &lt;&lt; "Dog: " &lt;&lt; dogYears &lt;&lt; endl;
+    cout &lt;&lt; "Enter number (0 quits): ";
+    cin &gt;&gt; num;           <span class="comment">// ADVANCING</span>
+}
+
+<span class="comment">// Sentinel: read until file ends</span>
+while (fileVar) {         <span class="comment">// true while file has data</span>
+    <span class="comment">// process...</span>
+}
+
+<span class="comment">// Sentinel: user types Y/N to stop</span>
+done = 'N';               <span class="comment">// INIT</span>
+while (done == 'N') {     <span class="comment">// CONDITION</span>
+    <span class="comment">// do work...</span>
+    cout &lt;&lt; "Done? (Y/N): ";
+    cin &gt;&gt; done;          <span class="comment">// ADVANCING</span>
+}</pre>
+    <p class="note">The "read before the loop and also at the bottom" pattern is called a <strong>priming read</strong>.</p>
+
+    <h2 class="new" style="margin-top:5px">Priming Read Pattern</h2>
+    <p>When reading is the advancing mechanism, you must read ONCE before the loop starts, then again at the BOTTOM of the loop body.</p>
+    <pre><span class="comment">// Read file until end — priming read pattern</span>
+GetSaleData(inF, desc, qty, price);  <span class="comment">// BEFORE loop</span>
+while (inF) {
+    ComputeExtended(ext, qty, price);
+    DisplayLine(desc, qty, price, ext);
+    GetSaleData(inF, desc, qty, price); <span class="comment">// BOTTOM</span>
+}
+
+<span class="comment">// Sum odd numbers until even (sentinel = even)</span>
+inF &gt;&gt; num;               <span class="comment">// priming read</span>
+while (num % 2 == 1) {    <span class="comment">// while odd</span>
+    sum = sum + num;
+    inF &gt;&gt; num;           <span class="comment">// advancing at bottom</span>
+}</pre>
+  </div>
+
+  <!-- COL 3 -->
+  <div class="span1 section col-divider">
+    <h2 class="new">Nested While Loops</h2>
+    <p>A while loop inside another while loop. Common pattern: outer loop does main work, inner loop validates input.</p>
+    <pre><span class="comment">// Outer: keep going until user is done</span>
+<span class="comment">// Inner: validate each input</span>
+done = 'N';
+while (done == 'N') {
+
+    <span class="comment">// Get a valid positive number</span>
+    cout &lt;&lt; "Enter positive number: ";
+    cin &gt;&gt; num;
+    while (num &lt; 0) {          <span class="comment">// inner validation</span>
+        cout &lt;&lt; "ERROR - positive only: ";
+        cin &gt;&gt; num;
+    }
+
+    <span class="comment">// update even/odd counts</span>
+    if (num % 2 == 0)
+        evenCnt = evenCnt + 1;
+    else
+        oddCnt = oddCnt + 1;
+
+    <span class="comment">// validate done answer</span>
+    cout &lt;&lt; "Are you done? (Y/N): ";
+    cin &gt;&gt; done;
+    while (done != 'N' &amp;&amp; done != 'Y') {
+        cout &lt;&lt; "Use Y or N only: ";
+        cin &gt;&gt; done;
+    }
+}</pre>
+
+    <h2 class="new" style="margin-top:5px">Accumulation &amp; Counting</h2>
+    <pre><span class="comment">// Accumulator — running total</span>
+total = 0.00;              <span class="comment">// INIT before loop</span>
+while (...) {
+    total = total + price; <span class="comment">// ADD each time</span>
+}
+
+<span class="comment">// Counter — running count</span>
+count = 0;                 <span class="comment">// INIT before loop</span>
+while (...) {
+    count++;               <span class="comment">// count = count + 1</span>
+}
+
+<span class="comment">// Conditional accumulation</span>
+if (code == 's')
+    subTotal = subTotal + price;
+else
+    pkgTotal = pkgTotal + price;</pre>
+    <p class="note">Always initialize totals/counts to 0 BEFORE the loop — not inside it.</p>
+  </div>
+
+  <!-- COL 4 -->
+  <div class="span1 section col-divider">
+    <h2 class="new">Top-Down Design Table</h2>
+    <p>For each function, identify 3 things: what comes <strong>in</strong> (Inputs), what goes <strong>out</strong> (Outputs), what it creates on its own (Locals).</p>
+    <table>
+      <tr><th>Column</th><th>Means</th><th>In code?</th></tr>
+      <tr><td>Inputs</td><td>received from caller</td><td>parameters (no &amp;)</td></tr>
+      <tr><td>Outputs</td><td>sent back to caller</td><td>parameters with &amp;</td></tr>
+      <tr><td>Locals</td><td>created in function</td><td>local variables</td></tr>
+    </table>
+    <p style="margin-top:3px">Example — <code>ComputeCost</code>:</p>
+    <table>
+      <tr><th>Inputs</th><th>Outputs</th><th>Locals</th></tr>
+      <tr><td>weight, distance, baseFee, costPerPound, costPerMile, overWeightLimit, overWeightSurcharge</td><td>cost</td><td>extraWeight</td></tr>
+    </table>
+    <pre><span class="comment">// Translates directly to prototype:</span>
+void ComputeCost(double weight, double distance,
+    double baseFee, double costPerPound,
+    double costPerMile, double overWeightLimit,
+    double overWeightSurcharge, double &amp; cost);</pre>
+    <p class="note">Inputs = no &amp;. Outputs = with &amp;. Locals = defined under the heading inside the function. ifstream is always &amp;.</p>
+
+    <h2 class="new" style="margin-top:5px">Algorithm Writing Style</h2>
+    <p>Written in plain English, one step per line. Must match the Top-Down Design exactly.</p>
+    <pre>GetFileName
+  Display "Enter File Name: " to user
+  Get fileName from user
+
+ProcessEachTransaction
+  Open salesFile (use fileName)
+  Get numTrans from user
+  While numTrans &lt;= 0
+    Display "Invalid. Enter positive: "
+    Get numTrans from user
+  Write numTrans to salesFile
+  For (count = 0; count &lt; numTrans; count++)
+    Follow GetTransactionData</pre>
+    <p class="note">Algorithm = what to do. Code = how to do it. They must match line-for-line.</p>
+  </div>
+
+  <!-- ROW 2 -->
+  <div class="span2 section">
+    <h2 class="new">while(fileVar) — Reading Until End of File</h2>
+    <p>When you don't know how many records are in a file, use a priming read + <code>while(fileVar)</code> instead of a counted for loop.</p>
+    <pre><span class="comment">// Pattern 1: process file with known count (for loop)</span>
+dataFile &gt;&gt; numItems;
+for (int i = 0; i &lt; numItems; i++) {
+    GetSaleData(dataFile, desc, qty, price);
+    <span class="comment">// process...</span>
+}
+
+<span class="comment">// Pattern 2: process file with UNKNOWN count (while loop + priming read)</span>
+totalCost = 0;
+shipCount = 0;
+GetShipment(inFile, weight, distance);     <span class="comment">// priming read BEFORE loop</span>
+while (inFile) {                           <span class="comment">// true while file has more data</span>
+    ComputeCost(weight, distance, ..., cost);
+    totalCost = totalCost + cost;          <span class="comment">// accumulate</span>
+    shipCount++;                           <span class="comment">// count</span>
+    GetShipment(inFile, weight, distance); <span class="comment">// advancing at BOTTOM</span>
+}
+inFile.close();</pre>
+    <p class="note">The priming read must appear both BEFORE the loop and at the BOTTOM of the loop body. This ensures the condition is tested with fresh data each time.</p>
+  </div>
+
+  <div class="span2 section col-divider">
+    <h2 class="new">strlen &amp; Char Validation <code style="font-size:5pt">#include &lt;cstring&gt;</code></h2>
+    <pre><span class="comment">// strlen returns the number of chars (not counting '\0')</span>
+strlen("Hello")  == 5
+strlen("CIS116") == 6
+
+<span class="comment">// Validate exact length — e.g. 12-digit SKU code</span>
+cout &lt;&lt; "Enter SKU (12 digits): ";
+cin.getline(sku, 80);
+while (strlen(sku) != 12) {
+    cout &lt;&lt; "Must be EXACTLY 12 digits: ";
+    cin.getline(sku, 80);
+}</pre>
+
+    <h2 class="new" style="margin-top:5px">Confirm Loop (Y/N re-entry pattern)</h2>
+    <p>Used in <code>ReadShippingRates</code> — show all values, ask if correct, repeat if not.</p>
+    <pre>correct = 'N';              <span class="comment">// INIT</span>
+while (correct == 'N') {   <span class="comment">// repeat until confirmed</span>
+    cout &lt;&lt; "Enter base fee: ";
+    cin &gt;&gt; baseFee;
+    <span class="comment">// ... get all values ...</span>
+    cout &lt;&lt; "Is this correct? (Y/N): ";
+    cin &gt;&gt; correct;
+    cin.ignore(1000, '\n');
+}</pre>
+    <p class="note">correct must be declared as <code>char correct;</code> — not <code>char correct[80]</code>. Single char variables compare with <code>==</code>.</p>
+  </div>
+</div>
+
+<!-- ████████████████  PAGE 3  ████████████████ -->
+<div class="page-label">SURFACE 3 OF 3 — Quick reference, gotchas, and patterns</div>
+<div class="page">
+  <div class="header">
+    <h1>CIS 116 — Final Exam Reference &nbsp;|&nbsp; Surface 3: Patterns, Gotchas &amp; Full Examples</h1>
+    <span>Mattox Ward &nbsp;|&nbsp; Exam: Tue May 12, 8–10 AM</span>
+  </div>
+
+  <!-- COL 1 -->
+  <div class="span1 section">
+    <h2>For vs While — When to Use</h2>
+    <table>
+      <tr><th>Situation</th><th>Use</th></tr>
+      <tr><td>Known count (read from file or user)</td><td><code>for</code></td></tr>
+      <tr><td>Unknown count (read until file ends)</td><td><code>while(fileVar)</code></td></tr>
+      <tr><td>Validate input (re-ask until valid)</td><td><code>while</code></td></tr>
+      <tr><td>Sentinel value (stop on special value)</td><td><code>while</code></td></tr>
+      <tr><td>Y/N confirmation loop</td><td><code>while</code></td></tr>
+      <tr><td>Count up/down by fixed step</td><td><code>for</code></td></tr>
+    </table>
+
+    <h2 style="margin-top:5px">cin.ignore() Rule</h2>
+    <ul>
+      <li><code>&gt;&gt;</code> followed by <code>&gt;&gt;</code> → <strong>no ignore needed</strong></li>
+      <li><code>&gt;&gt;</code> followed by <code>getline</code> → <strong>always ignore!</strong></li>
+      <li><code>getline</code> followed by anything → <strong>no ignore needed</strong></li>
+    </ul>
+    <pre>cin &gt;&gt; num;
+cin.ignore(1000, '\n');  <span class="comment">// MUST before getline</span>
+cin.getline(name, 80);
+
+<span class="comment">// Multiple >> in a row: fine</span>
+cin &gt;&gt; price &gt;&gt; qty &gt;&gt; code;
+cin.ignore(1000, '\n');  <span class="comment">// only at the end</span></pre>
 
     <h2 style="margin-top:5px">Common Gotchas</h2>
     <table>
       <tr><th>Problem</th><th>Fix</th></tr>
-      <tr><td>getline reads blank after <code>&gt;&gt;</code></td><td>Add <code>cin.ignore(1000,'\n');</code> before getline</td></tr>
-      <tr><td>Integer division gives 0</td><td>Use <code>1.0</code> or cast: <code>(double)a / b</code></td></tr>
-      <tr><td>Decimal imprecision</td><td>Add 0.5 before casting to int to round</td></tr>
-      <tr><td><code>setw()</code> not working</td><td>NOT sticky — reapply before every value</td></tr>
-      <tr><td>Function not changing variable</td><td>Parameter needs <code>&amp;</code> (pass by reference)</td></tr>
+      <tr><td>getline reads blank line</td><td><code>ignore(1000,'\n')</code> after <code>&gt;&gt;</code></td></tr>
+      <tr><td>Integer division gives 0</td><td>Cast: <code>(double)a / b</code></td></tr>
+      <tr><td>setw() not working</td><td>NOT sticky — reapply each time</td></tr>
+      <tr><td>Function not changing var</td><td>Add <code>&amp;</code> to parameter</td></tr>
+      <tr><td>char array comparison fails</td><td>Use single <code>char</code>, compare with <code>==</code></td></tr>
+      <tr><td>Loop runs forever</td><td>Check advancing mechanism exists</td></tr>
+      <tr><td>Loop skips first item</td><td>Need priming read before loop</td></tr>
+      <tr><td>Totals/counts wrong</td><td>Initialize to 0 BEFORE the loop</td></tr>
     </table>
   </div>
 
+  <!-- COL 2 -->
+  <div class="span1 section">
+    <h2>Full Function Example — with while loop</h2>
+    <pre><span class="comment">// Prototype</span>
+void ReadShippingRates(double &amp;, double &amp;, double &amp;,
+        double &amp;, double &amp;);
+
+<span class="comment">// Definition</span>
+void ReadShippingRates(double &amp; baseFee,
+        double &amp; costPerPound, double &amp; costPerMile,
+        double &amp; overWeightLimit,
+        double &amp; overWeightSurcharge) {
+    char correct;
+    correct = 'N';
+    while (correct == 'N') {
+        cout &lt;&lt; "Enter base fee: ";
+        cin &gt;&gt; baseFee;
+        cout &lt;&lt; "Enter cost per pound: ";
+        cin &gt;&gt; costPerPound;
+        cout &lt;&lt; "Enter cost per mile: ";
+        cin &gt;&gt; costPerMile;
+        cout &lt;&lt; "Enter overweight limit: ";
+        cin &gt;&gt; overWeightLimit;
+        cout &lt;&lt; "Enter overweight surcharge: ";
+        cin &gt;&gt; overWeightSurcharge;
+        cout &lt;&lt; "Is this correct? (Y/N): ";
+        cin &gt;&gt; correct;
+        cin.ignore(1000, '\n');
+    }
+}</pre>
+    <p class="note">All 5 values are <strong>outputs</strong> (use &amp;) because they're being filled in and sent back to main.</p>
+  </div>
+
+  <!-- COL 3 -->
+  <div class="span1 section col-divider">
+    <h2>Full Example — ProcessEachShipment</h2>
+    <pre><span class="comment">// Priming read + while(file) + accumulation</span>
+void ProcessEachShipment(char fileName[ ],
+        double baseFee, double costPerPound,
+        double costPerMile, double overWeightLimit,
+        double overWeightSurcharge,
+        double &amp; totalCost, int &amp; shipCount) {
+    double weight, distance, cost;
+    ifstream inFile;
+
+    totalCost = 0;        <span class="comment">// init BEFORE loop</span>
+    shipCount = 0;        <span class="comment">// init BEFORE loop</span>
+
+    inFile.open(fileName);
+    GetShipment(inFile, weight, distance); <span class="comment">// PRIMING</span>
+    while (inFile) {
+        ComputeCost(weight, distance,
+            baseFee, costPerPound, costPerMile,
+            overWeightLimit, overWeightSurcharge,
+            cost);
+        totalCost = totalCost + cost;      <span class="comment">// accum</span>
+        shipCount++;                        <span class="comment">// count</span>
+        GetShipment(inFile, weight,        <span class="comment">// advance</span>
+            distance);
+    }
+    inFile.close();
+}</pre>
+  </div>
+
+  <!-- COL 4 -->
+  <div class="span1 section col-divider">
+    <h2>Top-Down Design → Prototype Cheatmap</h2>
+    <table>
+      <tr><th>In TDD table</th><th>In prototype</th></tr>
+      <tr><td>Input (no change)</td><td><code>double x</code> — no &amp;</td></tr>
+      <tr><td>Output (changed)</td><td><code>double &amp; x</code> — with &amp;</td></tr>
+      <tr><td>ifstream / ofstream</td><td>always <code>&amp;</code> regardless</td></tr>
+      <tr><td>char array</td><td><code>char name[80]</code> or <code>char name[ ]</code></td></tr>
+      <tr><td>Local variable</td><td>defined inside the function body</td></tr>
+    </table>
+
+    <h2 style="margin-top:5px">Algorithm → Code Mapping</h2>
+    <table>
+      <tr><th>Algorithm says</th><th>Code is</th></tr>
+      <tr><td>Display "..." to user</td><td><code>cout &lt;&lt; "...";</code></td></tr>
+      <tr><td>Get x from user</td><td><code>cin &gt;&gt; x;</code></td></tr>
+      <tr><td>Get x from file</td><td><code>file &gt;&gt; x;</code></td></tr>
+      <tr><td>Set x to 0</td><td><code>x = 0;</code></td></tr>
+      <tr><td>Add y to x</td><td><code>x = x + y;</code></td></tr>
+      <tr><td>Add 1 to count</td><td><code>count++;</code></td></tr>
+      <tr><td>While x &lt;= 0</td><td><code>while (x &lt;= 0) {</code></td></tr>
+      <tr><td>For each item (n times)</td><td><code>for (i=0; i&lt;n; i++) {</code></td></tr>
+      <tr><td>Do the following for each item in file</td><td>priming read + <code>while(file)</code></td></tr>
+      <tr><td>Follow FunctionName</td><td><code>FunctionName(args);</code></td></tr>
+      <tr><td>When x &gt; y ... Otherwise</td><td><code>if (x &gt; y) ... else</code></td></tr>
+    </table>
+
+    <h2 style="margin-top:5px">Letter Grade if/else Pattern</h2>
+    <pre><span class="comment">// Preferred: chained else if (efficient)</span>
+if (avg &gt;= 90)        letter = 'A';
+else if (avg &gt;= 80)   letter = 'B';
+else if (avg &gt;= 70)   letter = 'C';
+else if (avg &gt;= 60)   letter = 'D';
+else                  letter = 'F';</pre>
+    <p class="note">Once a condition is true the rest are skipped — no need to check both ends of each range.</p>
+  </div>
+
+  <!-- ROW 2: FULL PROGRAM SKELETON -->
+  <div class="span4 section" style="margin-top:2px">
+    <h2>Full Program Skeleton — Everything in Order</h2>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <pre><span class="comment">// ── INCLUDES + NAMESPACE ──────────────────────</span>
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;iomanip&gt;
+#include &lt;cstring&gt;   <span class="comment">// only if using strlen</span>
+using namespace std;
+<span class="comment">// ── HEADER COMMENT ────────────────────────────</span>
+<span class="comment">// Programmer:  Mattox Ward</span>
+<span class="comment">// Date Due:    Friday, May 1, 2026</span>
+<span class="comment">// Project:     Lab11</span>
+<span class="comment">// Description: What this program does.</span>
+<span class="comment">// ── GLOBAL CONSTANTS ──────────────────────────</span>
+const double TAX_RATE = 0.0875;
+<span class="comment">// ── PROTOTYPES ────────────────────────────────</span>
+void GetFileName(char [80]);
+void ProcessEach(char [80], double &amp;, int &amp;);
+void DisplaySummary(double, int);
+<span class="comment">// ── MAIN ──────────────────────────────────────</span>
+int main(void) {
+    char fileName[80];
+    double totalCost;
+    int count;
+    GetFileName(fileName);
+    ProcessEach(fileName, totalCost, count);
+    DisplaySummary(totalCost, count);
+    return 0;
+}</pre>
+      <pre><span class="comment">// ── FUNCTION DEFINITIONS ──────────────────────</span>
+void GetFileName(char fileName[80]) {
+    cout &lt;&lt; "Enter file name: ";
+    cin.getline(fileName, 80);
+}
+
+void ProcessEach(char fileName[80],
+        double &amp; totalCost, int &amp; count) {
+    double price, distance;
+    ifstream inFile;
+
+    totalCost = 0;         <span class="comment">// init BEFORE loop</span>
+    count = 0;             <span class="comment">// init BEFORE loop</span>
+
+    inFile.open(fileName);
+    inFile &gt;&gt; price &gt;&gt; distance;   <span class="comment">// priming read</span>
+    inFile.ignore(1000, '\n');
+    while (inFile) {
+        totalCost = totalCost + price;
+        count++;
+        inFile &gt;&gt; price &gt;&gt; distance; <span class="comment">// advance</span>
+        inFile.ignore(1000, '\n');
+    }
+    inFile.close();
+}
+
+void DisplaySummary(double totalCost, int count) {
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2);
+    cout &lt;&lt; left &lt;&lt; setw(25) &lt;&lt; "Total Cost:"
+         &lt;&lt; right &lt;&lt; setw(10) &lt;&lt; totalCost &lt;&lt; endl;
+    cout &lt;&lt; left &lt;&lt; setw(25) &lt;&lt; "Total Items:"
+         &lt;&lt; right &lt;&lt; setw(10) &lt;&lt; count &lt;&lt; endl;
+}</pre>
+    </div>
+  </div>
 </div>
+
 </body>
 </html>
