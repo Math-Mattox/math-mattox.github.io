@@ -140,12 +140,14 @@ body {
 
 .story-info h2 {
   font-size: 1.25em;
-  color: #76bdff;
+  color: #ffffff;
+  text-align: center;
 }
 
 .story-date-location {
-  font-size: 16px;
+  font-size: 20px;
   color: #aaaaaa;
+  text-align: center;
 }
 
 .pdf-wrapper {
