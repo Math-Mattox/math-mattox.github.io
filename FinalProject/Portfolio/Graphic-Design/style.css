@@ -168,8 +168,13 @@ body {
     text-align: center;
 }
 
-.design-blurb:last-child {
-    margin-bottom: 0;
+.design-blurb a {
+  color: #76bdff;
+}
+
+.design-blurb a:hover {
+  color: #ffb876;
+  transition: color 0.2s ease;
 }
 
 @media (max-width: 768px) {
