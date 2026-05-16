@@ -164,8 +164,8 @@ body {
     gap: 48px;
 }
 
-.chapter-content.reverse {
-    flex-direction: row-reverse;
+.chapter-content.reverse {       /* Meant to swap around the order of the flexbox */
+    flex-direction: row-reverse; /* Needed Copilot to assist me with this idea */
 }
  
 .chapter-text {
