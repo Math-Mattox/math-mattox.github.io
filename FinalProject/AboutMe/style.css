@@ -133,13 +133,13 @@ body {
 }
  
 .chapter:last-child {
-    border-bottom: none;
+    border-bottom: none; /* This is to remove the line at the bottom of the last chapter */
 }
  
 .chapter-label {
     font-size: 0.5em;
     font-weight: 700;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     color: #76bdff;
     text-transform: uppercase;
     margin-bottom: 8px;
@@ -184,10 +184,7 @@ body {
  
 .chapter-image-wrap {
     flex: 0 0 380px;
-    border: 1px solid #444444;
     border-radius: 4px;
-    overflow: hidden;
-    background: #111111;
 }
  
 .chapter-image {
