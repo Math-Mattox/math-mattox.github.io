@@ -47,7 +47,6 @@ body {
     padding: 4px 8px;
     display: block;
     background: transparent;
-    cursor: pointer;
     font-size: 0.75em;
     font-family: inherit;
     transition: background-color 0.2s ease, transform 0.2s ease;
@@ -67,7 +66,7 @@ body {
     border-color: #ffffff;
 }
 
-.nav-links a.incomplete {
+.nav-links a.incomplete { /* This was the class I made for pages that weren't finished yet, as I was making the site */
     color: #ff5454;
     border-color: #ff5454;
 }
@@ -76,10 +75,6 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
-}
-
-.dropdown-main {
-    margin-left: 0;
 }
 
 .dropdown-content {
@@ -102,8 +97,6 @@ body {
     display: block;
     border: none;
     border-bottom: 1px solid #333333;
-    margin-left: 0;
-    transform: none;
 }
 
 .dropdown:hover .dropdown-content {
@@ -118,7 +111,6 @@ body {
 .dropdown-content a:hover {
     background-color: #333333;
     color: #76bdff;
-    transform: none;
 }
 
 /* Hero */
